@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:klock_app/routes.dart';
+import 'package:klock_app/ui/screens/home_screen.dart';
 import 'package:klock_app/ui/screens/login_screen.dart';
+import 'routes.dart';
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.login,
+      initialRoute: Routes.home,
       routes: {
         Routes.login: (context) => const LoginScreen(),
-        // 여기에 다른 라우트를 추가합니다.
+        Routes.home: (context) => const HomeScreen(),
       },
     );
   }
