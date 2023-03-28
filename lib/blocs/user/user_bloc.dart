@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:klock_app/domain/user_repository.dart';
 import 'package:klock_app/data/user_data.dart';
-import 'package:klock_app/blocs/user_event.dart';
+import 'package:klock_app/blocs/user/user_event.dart';
 
 class UserBloc extends Bloc<UserEvent, List<UserData>> {
   final UserRepository userRepository;

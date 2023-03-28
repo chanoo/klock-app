@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_facebook_auth: ^5.0.8
   flutter_bloc: ^8.1.2
+  get_it: ^7.2.0
+  dio: ^5.1.0
 
 dev_dependencies:
   flutter_test:

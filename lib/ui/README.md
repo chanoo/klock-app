@@ -14,6 +14,7 @@ lib/
    |- screens/
    |- styles/
    |- widgets/
+|- app.dart
 |- main.dart
 |- routes.dart
 ```
