@@ -1,29 +1,39 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
-#
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
-
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # 함수 및 메서드에 반환 타입을 항상 선언하도록 합니다.
+    always_declare_return_types: true
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+    # 변수를 명시적으로 null로 초기화하지 않도록 합니다.
+    avoid_init_to_null: true
+
+    # 클래스와 타입의 이름을 카멜 케이스(camelCase)로 작성하도록 합니다.
+    camel_case_types: true
+
+    # 상수 이름을 SCREAMING_CAPS(대문자와 언더스코어)로 작성하도록 합니다.
+    constant_identifier_names: true
+
+    # 제어문(if, else, for, while 등)에서 중괄호를 사용하여 코드 블록을 명확하게 구분하도록 합니다.
+    curly_braces_in_flow_control_structures: true
+
+    # 파일 이름을 스네이크 케이스(snake_case)로 작성하도록 합니다.
+    file_names: true
+
+    # 코드의 각 줄이 80자를 넘지 않도록 합니다.
+    lines_longer_than_80_chars: true
+
+    # 상수가 아닌 식별자(변수, 함수, 메서드 등)의 이름을 카멜 케이스로 작성하도록 합니다.
+    non_constant_identifier_names: true
+
+    # 가능한 경우 const 생성자를 사용하도록 합니다.
+    prefer_const_constructors: true
+
+    # 로컬 변수를 변경할 필요가 없는 경우 final로 선언하도록 합니다.
+    prefer_final_locals: true
+
+    # `print` 문을 사용하는 것을 피하도록 권장합니다.
+    avoid_print: true
+
+    # 문자열을 표현할 때 작은따옴표('')를 사용하는 것을 선호하도록 권장합니다.
+    prefer_single_quotes: true
