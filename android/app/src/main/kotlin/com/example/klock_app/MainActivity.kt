@@ -1,4 +1,4 @@
-package com.example.klock_app
+package app.klock.android
 
 import io.flutter.embedding.android.FlutterActivity
 
