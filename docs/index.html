@@ -265,6 +265,22 @@
             transition: transform 0.5s ease;
         }
 
+        .glass-image-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px 20px 10px;
+            border-radius: 28px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.4s ease;
+            max-width: 300px;
+        }
+
+        .glass-image-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(0, 255, 194, 0.1);
+        }
+
         .screenshot:hover {
             transform: scale(1.02);
         }
@@ -377,7 +393,20 @@
                 <p>클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
 
                 <div class="screenshot-container">
-                    <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+                        <div class="glass-image-card">
+                            <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">실시간 AI 집중도 측정</p>
+                        </div>
+                        <div class="glass-image-card">
+                            <img src="history_list.png" alt="공부 기록 보관함" class="screenshot">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">공부 기록 보관함</p>
+                        </div>
+                        <div class="glass-image-card">
+                            <img src="history_detail.png" alt="타임랩스 확인" class="screenshot">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">타임랩스 비디오 기록</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="contact-box">
