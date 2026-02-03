@@ -4,29 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klock Support & Privacy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>클라크 (Klock) - Support & Privacy</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #00FFC2;
             --secondary: #FF8C00;
             --bg: #000000;
-            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-bg-hover: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.12);
             --text-main: #FFFFFF;
-            --text-dim: rgba(255, 255, 255, 0.7);
+            --text-dim: rgba(255, 255, 255, 0.6);
+            --card-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-main);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -34,101 +39,131 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Background Shadows */
-        .ambient-light {
+        /* Gradient Background Shapes */
+        .bg-gradient {
             position: fixed;
-            width: 300px;
-            height: 300px;
+            width: 60vw;
+            height: 60vw;
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(120px);
             z-index: -1;
-            opacity: 0.2;
+            opacity: 0.15;
+            animation: pulse 10s infinite alternate;
         }
 
-        .light-1 {
-            top: -50px;
-            left: -50px;
-            background: var(--primary);
+        .grad-1 {
+            top: -20vh;
+            left: -10vw;
+            background: radial-gradient(circle, var(--primary), transparent);
         }
 
-        .light-2 {
-            bottom: -50px;
-            right: -50px;
-            background: var(--secondary);
+        .grad-2 {
+            bottom: -20vh;
+            right: -10vw;
+            background: radial-gradient(circle, var(--secondary), transparent);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: scale(1.1);
+                opacity: 0.2;
+            }
         }
 
         header {
             width: 100%;
-            padding: 40px 20px;
+            padding: 60px 20px 20px;
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
         }
 
         .logo {
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--primary);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #FFF 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .logo span {
-            color: var(--text-main);
+        .sub-logo {
+            font-size: 14px;
+            color: var(--text-dim);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
         }
 
         nav {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-            padding: 6px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
+            display: inline-flex;
+            gap: 5px;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 40px;
             border: 1px solid var(--glass-border);
+            margin-bottom: 20px;
         }
 
         nav button {
             background: transparent;
             border: none;
             color: var(--text-dim);
-            padding: 10px 24px;
-            border-radius: 24px;
+            padding: 12px 28px;
+            border-radius: 35px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         nav button.active {
             background: var(--primary);
             color: var(--bg);
+            box-shadow: 0 4px 15px rgba(0, 255, 194, 0.3);
+            transform: scale(1.05);
         }
 
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 40px 0;
-            perspective: 1000px;
+            width: 92%;
+            max-width: 850px;
+            margin-bottom: 80px;
         }
 
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 0.8s ease-out;
+            border-radius: 32px;
+            padding: 50px;
+            box-shadow: var(--card-shadow);
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes fadeIn {
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
 
             to {
@@ -143,48 +178,95 @@
 
         .content-section.active {
             display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         h2 {
-            margin-bottom: 24px;
+            margin-bottom: 30px;
             color: var(--primary);
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: 700;
         }
 
         h3 {
-            margin: 24px 0 12px;
-            font-size: 18px;
+            margin: 40px 0 15px;
+            font-size: 20px;
             color: var(--secondary);
+            font-weight: 600;
+        }
+
+        h4 {
+            margin: 25px 0 10px;
+            font-size: 17px;
+            color: #fff;
+            border-left: 3px solid var(--primary);
+            padding-left: 12px;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.8;
             color: var(--text-dim);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
         }
 
         .contact-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 16px;
-            margin-top: 20px;
-            border-left: 4px solid var(--primary);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--primary);
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
         }
 
         .contact-box a {
             color: var(--primary);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .contact-box a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .screenshot-container {
+            text-align: center;
+            margin: 30px 0 40px;
         }
 
         .screenshot {
-            display: block;
             width: 100%;
-            max-width: 280px;
-            margin: 20px auto;
-            border-radius: 16px;
+            max-width: 260px;
+            border-radius: 20px;
             border: 1px solid var(--glass-border);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.5s ease;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.02);
         }
 
         ul {
@@ -192,47 +274,111 @@
         }
 
         li {
-            margin-bottom: 12px;
+            margin-bottom: 18px;
             color: var(--text-dim);
             position: relative;
-            padding-left: 20px;
+            padding-left: 28px;
+            line-height: 1.6;
         }
 
         li::before {
-            content: '•';
+            content: '→';
             position: absolute;
             left: 0;
             color: var(--primary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--glass-border);
+            margin: 40px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-q {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .faq-q::before {
+            content: 'Q.';
+            color: var(--primary);
+        }
+
+        .faq-a {
+            font-size: 15px;
+            padding-left: 28px;
         }
 
         footer {
-            padding: 40px;
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 14px;
+            padding: 60px;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 13px;
             text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Improvements */
+        @media (max-width: 600px) {
+            .glass-card {
+                padding: 30px 20px;
+                border-radius: 24px;
+            }
+
+            .logo {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            nav button {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="ambient-light light-1"></div>
-    <div class="ambient-light light-2"></div>
+    <div class="bg-gradient grad-1"></div>
+    <div class="bg-gradient grad-2"></div>
 
     <header>
-        <div class="logo"><span>K</span>LOCK</div>
+        <div class="logo">클라크</div>
+        <div class="sub-logo">Klock Support</div>
         <nav>
-            <button id="btn-support" class="active" onclick="showSection('support')">Support</button>
-            <button id="btn-privacy" onclick="showSection('privacy')">Privacy Policy</button>
+            <button id="btn-support" class="active" onclick="showSection('support')">고객 지원</button>
+            <button id="btn-privacy" onclick="showSection('privacy')">개인정보 처리방침</button>
         </nav>
     </header>
 
     <div class="container">
         <div class="glass-card">
+
             <!-- Support Section -->
             <section id="support" class="content-section active">
                 <h2>고객 지원 (Support)</h2>
-                <img src="study_screen.png" alt="Klock Study Screen" class="screenshot">
-                <p>클라크(Klock)는 AI를 통해 여러분의 공부 몰입도를 높여주는 스마트 타이머입니다. 사용 중 궁금한 점은 아래로 연락주세요.</p>
+                <p>클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
+
+                <div class="screenshot-container">
+                    <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
+                </div>
 
                 <div class="contact-box">
                     <p>문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
@@ -241,18 +387,64 @@
                 </div>
 
                 <h3>자주 묻는 질문 (FAQ)</h3>
+
+                <div class="faq-item">
+                    <div class="faq-q">카메라 권한이 왜 필요한가요?</div>
+                    <div class="faq-a">
+                        <p>앱의 핵심 기능인 **AI 집중도 분석** 및 **타임랩스 비디오 생성**을 위해 필요합니다. 클라크는 사용자가 실제 공부 중인지 감지하고, 공부가 끝나면 멋진 기록
+                            영상을 만들어 드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">내 얼굴 데이터가 서버로 전송되나요?</div>
+                    <div class="faq-a">
+                        <p>아니요. 모든 인공지능 분석은 **사용자의 스마트폰 내(On-Device)**에서만 이루어집니다. 영상 피드나 얼굴 데이터는 외부 서버로 절대 전송되지 않으며, 당사도
+                            접근할 수 없습니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">공부 중 스마트폰이 뜨거워져요.</div>
+                    <div class="faq-a">
+                        <p>실시간으로 AI 모델을 구동하기에 다소 열이 발생할 수 있습니다. 발열을 줄이려면 **'절전 모드(ECO)'**를 활성화해 주세요. 화면 밝기를 줄이고 연산을
+                            최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">타임랩스 영상이 만들어지지 않아요.</div>
+                    <div class="faq-a">
+                        <p>최소 공부 시간(1분) 이상 기록해야 영상이 생성됩니다. 또한 기기의 **저장 공간**이 충분한지, 카메라 권한이 항상 허용되어 있는지 확인해 주세요.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">다른 사람이 카메라에 잡히면 어떻게 되나요?</div>
+                    <div class="faq-a">
+                        <p>클라크는 특정 인물을 식별하는 것이 아니라 '사람(Person)'의 형태를 감지합니다. 가급적 사용자 본인만 나오는 환경에서 공부하시는 것이 가장 정확한 측정 결과를
+                            제공합니다.</p>
+                    </div>
+                </div>
+
+                <h3>문제 해결 (Troubleshooting)</h3>
                 <ul>
-                    <li><strong>AI 인식 정확도를 높이려면?</strong> 밝은 곳에서 인물의 얼굴과 상반신이 잘 보이도록 스마트폰을 거치해 주세요.</li>
-                    <li><strong>절전 모드는 무엇인가요?</strong> 화면 밝기를 최소화하고 불필요한 연산을 줄여 배터리 소모를 방지하는 모드입니다.</li>
+                    <li><strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.</li>
+                    <li><strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.</li>
                 </ul>
+
+                <hr>
+                <div style="text-align: center;">
+                    <p style="font-size: 14px;">본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.</p>
+                </div>
             </section>
 
             <!-- Privacy Section -->
             <section id="privacy" class="content-section">
-                <h2>Privacy Policy (개인정보 처리방침)</h2>
-                <p><strong>Last Updated: January 31, 2026</strong></p>
+                <h2>개인정보 처리방침 (Privacy Policy)</h2>
+                <p><strong>마지막 업데이트: 2026년 1월 31일</strong></p>
 
-                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 24px 0;">
+                <hr>
 
                 <h3>[한국어] 개인정보 처리방침</h3>
                 <p>'클라크(Klock)'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력 분석 및 타임랩스 기록 기능과 관련하여 어떠한
@@ -260,9 +452,8 @@
 
                 <h4>1. 처리하는 데이터 항목</h4>
                 <ul>
-                    <li><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상을 생성하기 위해 카메라 접근 권한이 필요합니다. 본 앱은 **얼굴 인식(Face
-                        Recognition)이나 생체 식별(Biometrics) 정보를 수집하지 않습니다.** 온디바이스 AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및
-                        영역만을 감지(Segmentation)합니다.</li>
+                    <li><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이 필요합니다. 본 앱은 **얼굴 식별이나 생체
+                        정보(Biometrics)를 수집하지 않습니다.** AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및 영역만을 감지(Segmentation)합니다.</li>
                     <li><strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.</li>
                     <li><strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.</li>
                 </ul>
@@ -288,7 +479,7 @@
                 <h4>5. 사용자의 권리</h4>
                 <p>사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.</p>
 
-                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 32px 0;">
+                <hr>
 
                 <h3>[English] Privacy Policy</h3>
                 <p>Klock (hereinafter "the App") values your privacy and complies with data protection laws. This policy
@@ -308,8 +499,7 @@
                 <ul>
                     <li><strong>On-Device AI Processing:</strong> All camera input is processed in real-time on your
                         device using on-device AI (TFLite). **No camera feed, facial data, or images are uploaded to any
-                        external servers or shared with third parties.** All processing is ephemeral and anonymized.
-                    </li>
+                        external servers or shared with third parties.**</li>
                     <li><strong>Local Storage:</strong> All snapshots and timelapse videos are stored exclusively in
                         your device's internal storage. We do not have access to these files and cannot retrieve them.
                     </li>
@@ -326,10 +516,6 @@
                 <p>We do not share, sell, or transfer your personal data to any third parties. All processing is
                     localized to your device.</p>
 
-                <h4>5. Your Rights</h4>
-                <p>You can revoke camera permissions at any time via system settings. You have full control to view or
-                    delete all stored study data and media within the App.</p>
-
                 <div class="contact-box">
                     <p>Contact: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
                 </div>
@@ -338,7 +524,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Klock. All rights reserved.
+        &copy; 2026 클라크 (Klock). All rights reserved.
     </footer>
 
     <script>
@@ -350,6 +536,9 @@
             // Toggle Buttons
             document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
             document.getElementById('btn-' + sectionId).classList.add('active');
+
+            // Scroll to top of card
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
