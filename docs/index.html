@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,8 +44,18 @@
             z-index: -1;
             opacity: 0.2;
         }
-        .light-1 { top: -50px; left: -50px; background: var(--primary); }
-        .light-2 { bottom: -50px; right: -50px; background: var(--secondary); }
+
+        .light-1 {
+            top: -50px;
+            left: -50px;
+            background: var(--primary);
+        }
+
+        .light-2 {
+            bottom: -50px;
+            right: -50px;
+            background: var(--secondary);
+        }
 
         header {
             width: 100%;
@@ -65,7 +76,9 @@
             gap: 12px;
         }
 
-        .logo span { color: var(--text-main); }
+        .logo span {
+            color: var(--text-main);
+        }
 
         nav {
             display: flex;
@@ -113,8 +126,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .content-section {
@@ -125,10 +145,24 @@
             display: block;
         }
 
-        h2 { margin-bottom: 24px; color: var(--primary); font-size: 24px; }
-        h3 { margin: 24px 0 12px; font-size: 18px; color: var(--secondary); }
-        p { line-height: 1.6; color: var(--text-dim); margin-bottom: 16px; }
-        
+        h2 {
+            margin-bottom: 24px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        h3 {
+            margin: 24px 0 12px;
+            font-size: 18px;
+            color: var(--secondary);
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
         .contact-box {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
@@ -150,9 +184,23 @@
             border: 1px solid var(--glass-border);
         }
 
-        ul { list-style: none; }
-        li { margin-bottom: 12px; color: var(--text-dim); position: relative; padding-left: 20px; }
-        li::before { content: '•'; position: absolute; left: 0; color: var(--primary); }
+        ul {
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: var(--text-dim);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
 
         footer {
             padding: 40px;
@@ -162,12 +210,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="ambient-light light-1"></div>
     <div class="ambient-light light-2"></div>
 
     <header>
-        <div class="logo"><span>K</span>LOCK</div>
+        <div class="logo">KLOCK</div>
         <nav>
             <button id="btn-support" class="active" onclick="showSection('support')">Support</button>
             <button id="btn-privacy" onclick="showSection('privacy')">Privacy Policy</button>
@@ -179,12 +228,13 @@
             <!-- Support Section -->
             <section id="support" class="content-section active">
                 <h2>고객 지원 (Support)</h2>
-                <img src="../assets/images/support/study_screen.png" alt="Klock Study Screen" class="screenshot">
+                <img src="study_screen.png" alt="Klock Study Screen" class="screenshot">
                 <p>클라크(Klock)는 AI를 통해 여러분의 공부 몰입도를 높여주는 스마트 타이머입니다. 사용 중 궁금한 점은 아래로 연락주세요.</p>
-                
+
                 <div class="contact-box">
                     <p>문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
-                    <p>커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions" target="_blank">GitHub Discussions</a></p>
+                    <p>커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions" target="_blank">GitHub
+                            Discussions</a></p>
                 </div>
 
                 <h3>자주 묻는 질문 (FAQ)</h3>
@@ -198,7 +248,7 @@
             <section id="privacy" class="content-section">
                 <h2>개인정보 처리방침</h2>
                 <p>본 방침은 'Klock' 앱의 데이터 처리 방식을 설명합니다.</p>
-                
+
                 <h3>1. 데이터 처리 원칙</h3>
                 <ul>
                     <li><strong>온디바이스 AI:</strong> 모든 인물 인식 AI 연산은 사용자의 스마트폰에서만 실시간으로 수행됩니다.</li>
@@ -228,4 +278,5 @@
         }
     </script>
 </body>
+
 </html>
