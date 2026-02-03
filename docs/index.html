@@ -178,10 +178,13 @@
         }
 
         .screenshot {
+            display: block;
             width: 100%;
+            max-width: 280px;
+            margin: 20px auto;
             border-radius: 16px;
-            margin: 20px 0;
             border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         ul {
@@ -216,7 +219,7 @@
     <div class="ambient-light light-2"></div>
 
     <header>
-        <div class="logo">KLOCK</div>
+        <div class="logo"><span>K</span>LOCK</div>
         <nav>
             <button id="btn-support" class="active" onclick="showSection('support')">Support</button>
             <button id="btn-privacy" onclick="showSection('privacy')">Privacy Policy</button>
@@ -246,18 +249,90 @@
 
             <!-- Privacy Section -->
             <section id="privacy" class="content-section">
-                <h2>개인정보 처리방침</h2>
-                <p>본 방침은 'Klock' 앱의 데이터 처리 방식을 설명합니다.</p>
+                <h2>Privacy Policy (개인정보 처리방침)</h2>
+                <p><strong>Last Updated: January 31, 2026</strong></p>
 
-                <h3>1. 데이터 처리 원칙</h3>
+                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 24px 0;">
+
+                <h3>[한국어] 개인정보 처리방침</h3>
+                <p>'클라크(Klock)'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력 분석 및 타임랩스 기록 기능과 관련하여 어떠한
+                    정보를 어떻게 처리하는지 설명합니다.</p>
+
+                <h4>1. 처리하는 데이터 항목</h4>
                 <ul>
-                    <li><strong>온디바이스 AI:</strong> 모든 인물 인식 AI 연산은 사용자의 스마트폰에서만 실시간으로 수행됩니다.</li>
-                    <li><strong>서버 전송 없음:</strong> 촬영된 이미지나 영상 피드는 절대로 외부 서버로 전송되지 않습니다.</li>
-                    <li><strong>얼굴 식별 불가:</strong> 당사는 사용자의 구체적인 얼굴 특징이나 생체 정보를 수집하거나 식별하지 않습니다.</li>
+                    <li><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상을 생성하기 위해 카메라 접근 권한이 필요합니다. 본 앱은 **얼굴 인식(Face
+                        Recognition)이나 생체 식별(Biometrics) 정보를 수집하지 않습니다.** 온디바이스 AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및
+                        영역만을 감지(Segmentation)합니다.</li>
+                    <li><strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.</li>
+                    <li><strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.</li>
                 </ul>
 
-                <h3>2. 데이터 저장</h3>
-                <p>타임랩스 영상과 공부 통계 기록은 사용자의 기기 로컬 저장소에만 안전하게 보관됩니다. 사용자가 앱을 삭제하거나 데이터를 직접 지우면 복구가 불가능합니다.</p>
+                <h4>2. 데이터 처리 및 보관 (중요)</h4>
+                <ul>
+                    <li><strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스 AI(TFLite)를 통해 사용자 기기 내에서만
+                        실시간으로 처리됩니다. **외부 서버로 전송되거나 공유되지 않습니다.** 모든 분석은 비식별화된 상태로 수행됩니다.</li>
+                    <li><strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의 기기 내부 저장소에만 저장됩니다. 사용자가
+                        직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적 수단이 없습니다.</li>
+                </ul>
+
+                <h4>3. 데이터 수집 목적</h4>
+                <ul>
+                    <li>앱의 핵심 기능인 AI 집중도 분석 제공</li>
+                    <li>사용자 공부 기록 보존 및 타임랩스 영상 생성</li>
+                    <li>학습 통계 및 대시보드 제공</li>
+                </ul>
+
+                <h4>4. 제3자 제공 및 위탁</h4>
+                <p>앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.</p>
+
+                <h4>5. 사용자의 권리</h4>
+                <p>사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.</p>
+
+                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 32px 0;">
+
+                <h3>[English] Privacy Policy</h3>
+                <p>Klock (hereinafter "the App") values your privacy and complies with data protection laws. This policy
+                    explains how we handle your information regarding our focus tracking and timelapse features.</p>
+
+                <h4>1. Data Collected</h4>
+                <ul>
+                    <li><strong>Camera Data:</strong> Access is required for AI-based focus tracking and snapshot
+                        recording. The app **does NOT collect face recognition or biometric data.** Our on-device AI
+                        model only performs human 'person' detection and segmentation.</li>
+                    <li><strong>Images and Videos:</strong> Snapshots and generated timelapse videos are stored on your
+                        device.</li>
+                    <li><strong>Usage Data:</strong> Study duration, break times, and productivity statistics.</li>
+                </ul>
+
+                <h4>2. Data Processing & Storage (Crucial)</h4>
+                <ul>
+                    <li><strong>On-Device AI Processing:</strong> All camera input is processed in real-time on your
+                        device using on-device AI (TFLite). **No camera feed, facial data, or images are uploaded to any
+                        external servers or shared with third parties.** All processing is ephemeral and anonymized.
+                    </li>
+                    <li><strong>Local Storage:</strong> All snapshots and timelapse videos are stored exclusively in
+                        your device's internal storage. We do not have access to these files and cannot retrieve them.
+                    </li>
+                </ul>
+
+                <h4>3. Purpose of Processing</h4>
+                <ul>
+                    <li>To provide AI-powered focus tracking</li>
+                    <li>To generate and save study history and timelapse videos</li>
+                    <li>To display personal productivity stats and dashboards</li>
+                </ul>
+
+                <h4>4. Third-Party Sharing</h4>
+                <p>We do not share, sell, or transfer your personal data to any third parties. All processing is
+                    localized to your device.</p>
+
+                <h4>5. Your Rights</h4>
+                <p>You can revoke camera permissions at any time via system settings. You have full control to view or
+                    delete all stored study data and media within the App.</p>
+
+                <div class="contact-box">
+                    <p>Contact: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
+                </div>
             </section>
         </div>
     </div>
