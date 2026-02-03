@@ -2,7 +2,7 @@
 
 클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래의 채널을 통해 문의해 주세요.
 
-![Klock Study Screen](study_screen.png)
+![Klock Study Screen](assets/images/support/study_screen.png)
 
 
 ## 1. Contact (문의처)
@@ -23,6 +23,9 @@ AI 모델을 지속적으로 사용하므로 발열이 발생할 수 있습니�
 ## 3. Trouble Shooting (문제 해결)
 - **권한 문제**: 앱 설정에서 카메라 권한이 허용되어 있는지 확인해 주세요.
 - **영상 생성 실패**: 기기의 저장 공간이 충분한지 확인해 주세요.
+
+---
+[개인정보 처리방침 (Privacy Policy)](PRIVACY_POLICY.md) 확인하기
 
 ---
 

@@ -57,3 +57,6 @@ You can revoke camera permissions at any time via system settings. You have full
 ---
 
 **Contact**: [fastchanoo@gmail.com](mailto:fastchanoo@gmail.com)
+
+---
+[고객 지원 (Support Page)](SUPPORT.md) 확인하기
