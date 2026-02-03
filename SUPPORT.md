@@ -2,6 +2,9 @@
 
 클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래의 채널을 통해 문의해 주세요.
 
+![Klock Study Screen](study_screen.png)
+
+
 ## 1. Contact (문의처)
 - **Email**: [fastchanoo@gmail.com](mailto:fastchanoo@gmail.com)
 - **GitHub Discussions**: [Klock Issues & Discussions](https://github.com/chanoo/klock-app/discussions)

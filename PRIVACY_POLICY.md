@@ -56,4 +56,4 @@ You can revoke camera permissions at any time via system settings. You have full
 
 ---
 
-**Contact**: [support@klock.app](mailto:support@klock.app)
+**Contact**: [fastchanoo@gmail.com](mailto:fastchanoo@gmail.com)
