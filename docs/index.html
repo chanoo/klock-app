@@ -254,6 +254,15 @@
         .screenshot-container {
             text-align: center;
             margin: 30px 0 40px;
+            width: 100%;
+        }
+
+        .screenshot-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
         }
 
         .screenshot {
@@ -350,7 +359,36 @@
         }
 
         /* Responsive Improvements */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .screenshot-slider {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                padding: 10px 0 20px;
+                -webkit-overflow-scrolling: touch;
+                gap: 15px;
+            }
+
+            .screenshot-slider::-webkit-scrollbar {
+                height: 4px;
+            }
+
+            .screenshot-slider::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+            }
+
+            .screenshot-slider::-webkit-scrollbar-thumb {
+                background: var(--primary);
+                border-radius: 10px;
+            }
+
+            .glass-image-card {
+                flex: 0 0 220px;
+                scroll-snap-align: center;
+            }
+
             .glass-card {
                 padding: 30px 20px;
                 border-radius: 24px;
@@ -394,7 +432,7 @@
                 <p>클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
 
                 <div class="screenshot-container">
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <div class="screenshot-slider">
                         <div class="glass-image-card">
                             <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
                             <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">실시간 AI 집중도 측정</p>
