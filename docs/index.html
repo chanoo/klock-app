@@ -259,10 +259,29 @@
 
         .screenshot-slider {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
             gap: 20px;
             width: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 10px 0 20px;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+        }
+
+        .screenshot-slider::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .screenshot-slider::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .screenshot-slider::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
         }
 
         .screenshot {
@@ -280,8 +299,8 @@
             border-radius: 24px;
             border: 1px solid var(--glass-border);
             transition: all 0.4s ease;
-            max-width: 230px;
-            flex: 1 1 200px;
+            flex: 0 0 220px;
+            scroll-snap-align: center;
         }
 
         .glass-image-card:hover {
@@ -361,32 +380,11 @@
         /* Responsive Improvements */
         @media (max-width: 768px) {
             .screenshot-slider {
-                flex-wrap: nowrap;
-                justify-content: flex-start;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                padding: 10px 0 20px;
-                -webkit-overflow-scrolling: touch;
                 gap: 15px;
             }
 
             .screenshot-slider::-webkit-scrollbar {
                 height: 4px;
-            }
-
-            .screenshot-slider::-webkit-scrollbar-track {
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 10px;
-            }
-
-            .screenshot-slider::-webkit-scrollbar-thumb {
-                background: var(--primary);
-                border-radius: 10px;
-            }
-
-            .glass-image-card {
-                flex: 0 0 220px;
-                scroll-snap-align: center;
             }
 
             .glass-card {
