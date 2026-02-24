@@ -75,7 +75,39 @@
             }
         }
 
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .lang-selector select {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: border-color 0.3s;
+        }
+
+        .lang-selector select:hover {
+            border-color: var(--primary);
+        }
+
+        .lang-selector select option {
+            background: var(--bg);
+            color: #fff;
+        }
+
         header {
+            position: relative;
             width: 100%;
             padding: 60px 20px 20px;
             text-align: center;
@@ -89,6 +121,7 @@
             margin-bottom: 8px;
             background: linear-gradient(135deg, #FFF 0%, var(--primary) 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -413,11 +446,19 @@
     <div class="bg-gradient grad-2"></div>
 
     <header>
-        <div class="logo">클라크</div>
-        <div class="sub-logo">Klock Support</div>
+        <div class="lang-selector">
+            <select id="languageSelect" onchange="setLanguage(this.value)">
+                <option value="ko">한국어</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+            </select>
+        </div>
+        <div class="logo" data-i18n="logo">클라크</div>
+        <div class="sub-logo" data-i18n="subLogo">Klock Support</div>
         <nav>
-            <button id="btn-support" class="active" onclick="showSection('support')">고객 지원</button>
-            <button id="btn-privacy" onclick="showSection('privacy')">개인정보 처리방침</button>
+            <button id="btn-support" class="active" onclick="showSection('support')" data-i18n="navSupport">고객
+                지원</button>
+            <button id="btn-privacy" onclick="showSection('privacy')" data-i18n="navPrivacy">개인정보 처리방침</button>
         </nav>
     </header>
 
@@ -426,186 +467,368 @@
 
             <!-- Support Section -->
             <section id="support" class="content-section active">
-                <h2>고객 지원 (Support)</h2>
-                <p>클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
+                <h2 data-i18n="supportTitle">고객 지원 (Support)</h2>
+                <p data-i18n="supportDesc">클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
 
                 <div class="screenshot-container">
                     <div class="screenshot-slider">
                         <div class="glass-image-card">
                             <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">실시간 AI 집중도 측정</p>
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen1">실시간
+                                AI 집중도 측정</p>
                         </div>
                         <div class="glass-image-card">
                             <img src="history_list.png" alt="공부 기록 보관함" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">공부 기록 보관함</p>
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen2">공부
+                                기록 보관함</p>
                         </div>
                         <div class="glass-image-card">
                             <img src="history_detail.png" alt="타임랩스 확인" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">타임랩스 비디오 기록</p>
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen3">
+                                타임랩스 비디오 기록</p>
                         </div>
                         <div class="glass-image-card">
                             <img src="exam_timer.png" alt="시험 타이머" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);">실전 시험 타이머</p>
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen4">실전
+                                모의고사 타이머</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-box">
-                    <p>문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
-                    <p>커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions" target="_blank">GitHub
-                            Discussions</a></p>
+                    <p data-i18n="contactEmail">문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a>
+                    </p>
+                    <p data-i18n="contactCommunity">커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions"
+                            target="_blank">GitHub Discussions</a></p>
                 </div>
 
-                <h3>자주 묻는 질문 (FAQ)</h3>
+                <h3 data-i18n="faqTitle">자주 묻는 질문 (FAQ)</h3>
 
                 <div class="faq-item">
-                    <div class="faq-q">카메라 권한이 왜 필요한가요?</div>
-                    <div class="faq-a">
+                    <div class="faq-q" data-i18n="faq1Q">카메라 권한이 왜 필요한가요?</div>
+                    <div class="faq-a" data-i18n="faq1A">
                         <p>앱의 핵심 기능인 <strong>AI 집중도 분석</strong> 및 <strong>타임랩스 비디오 생성</strong>을 위해 필요합니다. 클라크는 사용자가 실제
-                            공부 중인지 감지하고, 공부가 끝나면 멋진 기록
-                            영상을 만들어 드립니다.</p>
+                            공부 중인지 감지하고, 공부가 끝나면 멋진 기록 영상을 만들어 드립니다.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-q">내 얼굴 데이터가 서버로 전송되나요?</div>
-                    <div class="faq-a">
+                    <div class="faq-q" data-i18n="faq2Q">내 얼굴 데이터가 서버로 전송되나요?</div>
+                    <div class="faq-a" data-i18n="faq2A">
                         <p>아니요. 모든 인공지능 분석은 <strong>사용자의 스마트폰 내(On-Device)</strong>에서만 이루어집니다. 영상 피드나 얼굴 데이터는 외부 서버로 절대
-                            전송되지 않으며, 당사도
-                            접근할 수 없습니다.</p>
+                            전송되지 않으며, 당사도 접근할 수 없습니다.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-q">공부 중 스마트폰이 뜨거워져요.</div>
-                    <div class="faq-a">
+                    <div class="faq-q" data-i18n="faq3Q">공부 중 스마트폰이 뜨거워져요.</div>
+                    <div class="faq-a" data-i18n="faq3A">
                         <p>실시간으로 AI 모델을 구동하기에 다소 열이 발생할 수 있습니다. 발열을 줄이려면 <strong>'절전 모드(ECO)'</strong>를 활성화해 주세요. 화면 밝기를
-                            줄이고 연산을
-                            최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>
+                            줄이고 연산을 최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-q">타임랩스 영상이 만들어지지 않아요.</div>
-                    <div class="faq-a">
+                    <div class="faq-q" data-i18n="faq4Q">타임랩스 영상이 만들어지지 않아요.</div>
+                    <div class="faq-a" data-i18n="faq4A">
                         <p>최소 공부 시간(1분) 이상 기록해야 영상이 생성됩니다. 또한 기기의 <strong>저장 공간</strong>이 충분한지, 카메라 권한이 항상 허용되어 있는지 확인해
                             주세요.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-q">다른 사람이 카메라에 잡히면 어떻게 되나요?</div>
-                    <div class="faq-a">
+                    <div class="faq-q" data-i18n="faq5Q">다른 사람이 카메라에 잡히면 어떻게 되나요?</div>
+                    <div class="faq-a" data-i18n="faq5A">
                         <p>클라크는 특정 인물을 식별하는 것이 아니라 '사람(Person)'의 형태를 감지합니다. 가급적 사용자 본인만 나오는 환경에서 공부하시는 것이 가장 정확한 측정 결과를
                             제공합니다.</p>
                     </div>
                 </div>
 
-                <h3>문제 해결 (Troubleshooting)</h3>
+                <h3 data-i18n="troubleTitle">문제 해결 (Troubleshooting)</h3>
                 <ul>
-                    <li><strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.</li>
-                    <li><strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.</li>
+                    <li data-i18n="trouble1"><strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.</li>
+                    <li data-i18n="trouble2"><strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.
+                    </li>
                 </ul>
 
                 <hr>
                 <div style="text-align: center;">
-                    <p style="font-size: 14px;">본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.</p>
+                    <p style="font-size: 14px;" data-i18n="footerNote">본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.</p>
                 </div>
             </section>
 
             <!-- Privacy Section -->
             <section id="privacy" class="content-section">
-                <h2>개인정보 처리방침 (Privacy Policy)</h2>
-                <p><strong>마지막 업데이트: 2026년 1월 31일</strong></p>
+                <h2 data-i18n="privacyTitle">개인정보 처리방침 (Privacy Policy)</h2>
+                <p data-i18n="privacyUpdate"><strong>마지막 업데이트: 2026년 1월 31일</strong></p>
 
                 <hr>
 
-                <h3>[한국어] 개인정보 처리방침</h3>
-                <p>'클라크(Klock)'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력 분석 및 타임랩스 기록 기능과 관련하여 어떠한
-                    정보를 어떻게 처리하는지 설명합니다.</p>
+                <h3 data-i18n="privacyTitleIntro">개인정보 처리방침</h3>
+                <p data-i18n="privacyIntro">'클라크(Klock)'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력
+                    분석 및 타임랩스 기록 기능과 관련하여 어떠한 정보를 어떻게 처리하는지 설명합니다.</p>
 
-                <h4>1. 처리하는 데이터 항목</h4>
+                <h4 data-i18n="privacyH1">1. 처리하는 데이터 항목</h4>
                 <ul>
-                    <li><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이 필요합니다. 본 앱은 <strong>얼굴 식별이나
-                            생체
-                            정보(Biometrics)를 수집하지 않습니다.</strong> AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및 영역만을
-                        감지(Segmentation)합니다.</li>
-                    <li><strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.</li>
-                    <li><strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.</li>
-                </ul>
-
-                <h4>2. 데이터 처리 및 보관 (중요)</h4>
-                <ul>
-                    <li><strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스 AI(TFLite)를 통해 사용자 기기 내에서만
-                        실시간으로 처리됩니다. <strong>외부 서버로 전송되거나 공유되지 않습니다.</strong> 모든 분석은 비식별화된 상태로 수행됩니다.</li>
-                    <li><strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의 기기 내부 저장소에만 저장됩니다. 사용자가
-                        직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적 수단이 없습니다.</li>
-                </ul>
-
-                <h4>3. 데이터 수집 목적</h4>
-                <ul>
-                    <li>앱의 핵심 기능인 AI 집중도 분석 제공</li>
-                    <li>사용자 공부 기록 보존 및 타임랩스 영상 생성</li>
-                    <li>학습 통계 및 대시보드 제공</li>
-                </ul>
-
-                <h4>4. 제3자 제공 및 위탁</h4>
-                <p>앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.</p>
-
-                <h4>5. 사용자의 권리</h4>
-                <p>사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.</p>
-
-                <hr>
-
-                <h3>[English] Privacy Policy</h3>
-                <p>Klock (hereinafter "the App") values your privacy and complies with data protection laws. This policy
-                    explains how we handle your information regarding our focus tracking and timelapse features.</p>
-
-                <h4>1. Data Collected</h4>
-                <ul>
-                    <li><strong>Camera Data:</strong> Access is required for AI-based focus tracking and snapshot
-                        recording. The app <strong>does NOT collect face recognition or biometric data.</strong> Our
-                        on-device AI
-                        model only performs human 'person' detection and segmentation.</li>
-                    <li><strong>Images and Videos:</strong> Snapshots and generated timelapse videos are stored on your
-                        device.</li>
-                    <li><strong>Usage Data:</strong> Study duration, break times, and productivity statistics.</li>
-                </ul>
-
-                <h4>2. Data Processing & Storage (Crucial)</h4>
-                <ul>
-                    <li><strong>On-Device AI Processing:</strong> All camera input is processed in real-time on your
-                        device using on-device AI (TFLite). <strong>No camera feed, facial data, or images are uploaded
-                            to any
-                            external servers or shared with third parties.</strong></li>
-                    <li><strong>Local Storage:</strong> All snapshots and timelapse videos are stored exclusively in
-                        your device's internal storage. We do not have access to these files and cannot retrieve them.
+                    <li data-i18n="privacyH1L1"><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이
+                        필요합니다. 본 앱은 <strong>얼굴 식별이나 생체 정보(Biometrics)를 수집하지 않습니다.</strong> AI 모델은 오직 화면 내 '인물(Person)'의
+                        존재 여부 및 영역만을 감지(Segmentation)합니다.</li>
+                    <li data-i18n="privacyH1L2"><strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.
                     </li>
+                    <li data-i18n="privacyH1L3"><strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.</li>
                 </ul>
 
-                <h4>3. Purpose of Processing</h4>
+                <h4 data-i18n="privacyH2">2. 데이터 처리 및 보관 (중요)</h4>
                 <ul>
-                    <li>To provide AI-powered focus tracking</li>
-                    <li>To generate and save study history and timelapse videos</li>
-                    <li>To display personal productivity stats and dashboards</li>
+                    <li data-i18n="privacyH2L1"><strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스
+                        AI(TFLite)를 통해 사용자 기기 내에서만 실시간으로 처리됩니다. <strong>외부 서버로 전송되거나 공유되지 않습니다.</strong> 모든 분석은 비식별화된
+                        상태로 수행됩니다.</li>
+                    <li data-i18n="privacyH2L2"><strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의
+                        기기 내부 저장소에만 저장됩니다. 사용자가 직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적
+                        수단이 없습니다.</li>
                 </ul>
 
-                <h4>4. Third-Party Sharing</h4>
-                <p>We do not share, sell, or transfer your personal data to any third parties. All processing is
-                    localized to your device.</p>
+                <h4 data-i18n="privacyH3">3. 데이터 수집 목적</h4>
+                <ul>
+                    <li data-i18n="privacyH3L1">앱의 핵심 기능인 AI 집중도 분석 제공</li>
+                    <li data-i18n="privacyH3L2">사용자 공부 기록 보존 및 타임랩스 영상 생성</li>
+                    <li data-i18n="privacyH3L3">학습 통계 및 대시보드 제공</li>
+                </ul>
 
-                <div class="contact-box">
-                    <p>Contact: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
-                </div>
+                <h4 data-i18n="privacyH4">4. 제3자 제공 및 위탁</h4>
+                <p data-i18n="privacyH4Desc">앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.</p>
+
+                <h4 data-i18n="privacyH5">5. 사용자의 권리</h4>
+                <p data-i18n="privacyH5Desc">사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.</p>
+
             </section>
         </div>
     </div>
 
     <footer>
-        &copy; 2026 클라크 (Klock). All rights reserved.
+        <span data-i18n="footerCopyright">&copy; 2026 클라크 (Klock). All rights reserved.</span>
     </footer>
 
     <script>
+        const translations = {
+            ko: {
+                logo: "클라크",
+                subLogo: "Klock Support",
+                navSupport: "고객 지원",
+                navPrivacy: "개인정보 처리방침",
+
+                supportTitle: "고객 지원 (Support)",
+                supportDesc: "클라크(Klock)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.",
+                screen1: "실시간 AI 집중도 측정",
+                screen2: "공부 기록 보관함",
+                screen3: "타임랩스 비디오 기록",
+                screen4: "실전 모의고사 타이머",
+                contactEmail: "문의 이메일: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+                contactCommunity: "커뮤니티: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+                faqTitle: "자주 묻는 질문 (FAQ)",
+
+                faq1Q: "카메라 권한이 왜 필요한가요?",
+                faq1A: "<p>앱의 핵심 기능인 <strong>AI 집중도 분석</strong> 및 <strong>타임랩스 비디오 생성</strong>을 위해 필요합니다. 클라크는 사용자가 실제 공부 중인지 감지하고, 공부가 끝나면 멋진 기록 영상을 만들어 드립니다.</p>",
+                faq2Q: "내 얼굴 데이터가 서버로 전송되나요?",
+                faq2A: "<p>아니요. 모든 인공지능 분석은 <strong>사용자의 스마트폰 내(On-Device)</strong>에서만 이루어집니다. 영상 피드나 얼굴 데이터는 외부 서버로 절대 전송되지 않으며, 당사도 접근할 수 없습니다.</p>",
+                faq3Q: "공부 중 스마트폰이 뜨거워져요.",
+                faq3A: "<p>실시간으로 AI 모델을 구동하기에 다소 열이 발생할 수 있습니다. 발열을 줄이려면 <strong>'절전 모드(ECO)'</strong>를 활성화해 주세요. 화면 밝기를 줄이고 연산을 최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>",
+                faq4Q: "타임랩스 영상이 만들어지지 않아요.",
+                faq4A: "<p>최소 공부 시간(1분) 이상 기록해야 영상이 생성됩니다. 또한 기기의 <strong>저장 공간</strong>이 충분한지, 카메라 권한이 항상 허용되어 있는지 확인해 주세요.</p>",
+                faq5Q: "다른 사람이 카메라에 잡히면 어떻게 되나요?",
+                faq5A: "<p>클라크는 특정 인물을 식별하는 것이 아니라 '사람(Person)'의 형태를 감지합니다. 가급적 사용자 본인만 나오는 환경에서 공부하시는 것이 가장 정확한 측정 결과를 제공합니다.</p>",
+
+                troubleTitle: "문제 해결 (Troubleshooting)",
+                trouble1: "<strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.",
+                trouble2: "<strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.",
+                footerNote: "본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.",
+
+                privacyTitle: "개인정보 처리방침 (Privacy Policy)",
+                privacyUpdate: "<strong>마지막 업데이트: 2026년 1월 31일</strong>",
+
+                privacyH1: "1. 처리하는 데이터 항목",
+                privacyH1L1: "<strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이 필요합니다. 본 앱은 <strong>얼굴 식별이나 생체 정보(Biometrics)를 수집하지 않습니다.</strong> AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및 영역만을 감지(Segmentation)합니다.",
+                privacyH1L2: "<strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.",
+                privacyH1L3: "<strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.",
+
+                privacyH2: "2. 데이터 처리 및 보관 (중요)",
+                privacyH2L1: "<strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스 AI(TFLite)를 통해 사용자 기기 내에서만 실시간으로 처리됩니다. <strong>외부 서버로 전송되거나 공유되지 않습니다.</strong> 모든 분석은 비식별화된 상태로 수행됩니다.",
+                privacyH2L2: "<strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의 기기 내부 저장소에만 저장됩니다. 사용자가 직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적 수단이 없습니다.",
+
+                privacyH3: "3. 데이터 수집 목적",
+                privacyH3L1: "앱의 핵심 기능인 AI 집중도 분석 제공",
+                privacyH3L2: "사용자 공부 기록 보존 및 타임랩스 영상 생성",
+                privacyH3L3: "학습 통계 및 대시보드 제공",
+
+                privacyH4: "4. 제3자 제공 및 위탁",
+                privacyH4Desc: "앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.",
+
+                privacyH5: "5. 사용자의 권리",
+                privacyH5Desc: "사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.",
+
+                privacyTitleIntro: "개인정보 처리방침",
+                privacyIntro: "'클라크(Klock)'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력 분석 및 타임랩스 기록 기능과 관련하여 어떠한 정보를 어떻게 처리하는지 설명합니다.",
+
+                footerCopyright: "&copy; 2026 클라크 (Klock). All rights reserved."
+            },
+            en: {
+                logo: "Klock",
+                subLogo: "Klock Support",
+                navSupport: "Support",
+                navPrivacy: "Privacy Policy",
+
+                supportTitle: "Support",
+                supportDesc: "Thank you for using Klock. If you have any questions or encounter issues while using the app, please contact us through the channels below.",
+                screen1: "Real-time AI Focus Tracking",
+                screen2: "Study History Archive",
+                screen3: "Timelapse Video Log",
+                screen4: "Mock Exam Timer",
+                contactEmail: "Email: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+                contactCommunity: "Community: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+                faqTitle: "Frequently Asked Questions (FAQ)",
+
+                faq1Q: "Why do you need camera access?",
+                faq1A: "<p>It is required for the app's core features: <strong>AI focus analysis</strong> and <strong>timelapse video generation</strong>. Klock detects if you are actually studying and creates a cool timelapse video when you're done.</p>",
+                faq2Q: "Is my face data sent to a server?",
+                faq2A: "<p>No. All AI analysis is processed <strong>strictly on-device</strong> within your smartphone. The video feed and facial data are never transmitted to external servers, and we have no access to them.</p>",
+                faq3Q: "My phone gets hot while studying.",
+                faq3A: "<p>Running AI models in real-time can generate some heat. To reduce this, please enable <strong>'ECO Mode'</strong>. It lowers screen brightness and optimizes computation to effectively manage battery and temperature.</p>",
+                faq4Q: "The timelapse video is not being generated.",
+                faq4A: "<p>A video is generated only if you record for a minimum of 1 minute. Please also ensure you have sufficient <strong>storage space</strong> on your device and that camera access is always allowed.</p>",
+                faq5Q: "What happens if someone else is captured on camera?",
+                faq5A: "<p>Klock detects the general shape of a 'Person' without identifying specific individuals. For the most accurate measurement, it's best to study in an environment where only you are visible.</p>",
+
+                troubleTitle: "Troubleshooting",
+                trouble1: "<strong>Detection Failure:</strong> Make sure the environment is not too dark and there is no smudge on the camera lens.",
+                trouble2: "<strong>Notification Issue:</strong> If you don't receive the break time over notification, check your system settings to ensure app notifications are allowed.",
+                footerNote: "The content on this page complies with our latest privacy policy.",
+
+                privacyTitle: "Privacy Policy",
+                privacyUpdate: "<strong>Last Updated: January 31, 2026</strong>",
+
+                privacyH1: "1. Data Collected",
+                privacyH1L1: "<strong>Camera Data:</strong> Access is required for AI-based focus tracking and snapshot recording. The app <strong>does NOT collect face recognition or biometric data.</strong> Our on-device AI model only performs human 'person' detection and segmentation.",
+                privacyH1L2: "<strong>Images and Videos:</strong> Snapshots and generated timelapse videos are stored on your device.",
+                privacyH1L3: "<strong>Usage Data:</strong> Study duration, break times, and productivity statistics.",
+
+                privacyH2: "2. Data Processing & Storage (Crucial)",
+                privacyH2L1: "<strong>On-Device AI Processing:</strong> All camera input is processed in real-time on your device using on-device AI (TFLite). <strong>No camera feed, facial data, or images are uploaded to any external servers or shared with third parties.</strong>",
+                privacyH2L2: "<strong>Local Storage:</strong> All snapshots and timelapse videos are stored exclusively in your device's internal storage. We do not have access to these files and cannot retrieve them.",
+
+                privacyH3: "3. Purpose of Processing",
+                privacyH3L1: "To provide AI-powered focus tracking",
+                privacyH3L2: "To generate and save study history and timelapse videos",
+                privacyH3L3: "To display personal productivity stats and dashboards",
+
+                privacyH4: "4. Third-Party Sharing",
+                privacyH4Desc: "We do not share, sell, or transfer your personal data to any third parties. All processing is localized to your device.",
+
+                privacyH5: "5. User Rights",
+                privacyH5Desc: "You can revoke camera access at any time through the app settings, or delete your saved study records and video data.",
+
+                privacyTitleIntro: "Privacy Policy",
+                privacyIntro: "Klock (hereinafter \"the App\") values your privacy and complies with data protection laws. This policy explains how we handle your information regarding our focus tracking and timelapse features.",
+
+                footerCopyright: "&copy; 2026 Klock. All rights reserved."
+            },
+            ja: {
+                logo: "クロック",
+                subLogo: "Klock Support",
+                navSupport: "サポート",
+                navPrivacy: "プライバシーポリシー",
+
+                supportTitle: "サポート (Support)",
+                supportDesc: "Klockをご利用いただきありがとうございます。アプリのご利用中にご不明な点や問題が発生した場合は、以下のチャネルまでお問い合わせください。",
+                screen1: "リアルタイムAI集中力測定",
+                screen2: "学習記録アーカイブ",
+                screen3: "タイムラプスビデオ記録",
+                screen4: "本番向け模試タイマー",
+                contactEmail: "メールお問い合わせ: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+                contactCommunity: "コミュニティ: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+                faqTitle: "よくあるご質問 (FAQ)",
+
+                faq1Q: "なぜカメラへのアクセスが必要なのですか？",
+                faq1A: "<p>アプリのコア機能である<strong>AI集中力分析</strong>と<strong>タイムラプスビデオ作成</strong>のために必要です。Klockは実際に勉強しているかを検知し、終了後に素晴らしい記録映像を作成します。</p>",
+                faq2Q: "私の顔データはサーバーに送信されますか？",
+                faq2A: "<p>いいえ。すべてのAI分析は<strong>スマートフォンのデバイス上 (On-Device) </strong>においてのみ処理されます。映像フィードや顔データが外部サーバーに送信されることは決してなく、当社がアクセスすることもありません。</p>",
+                faq3Q: "勉強中にスマートフォンが熱くなります。",
+                faq3A: "<p>リアルタイムでAIモデルを稼働させるため、ある程度の熱が発生することがあります。発熱を抑えるには<strong>「エコ（ECO）モード」</strong>を有効にしてください。画面の明るさを下げ、計算処理を最適化することで、バッテリーと発熱を効果的に管理します。</p>",
+                faq4Q: "タイムラプスビデオが作成されません。",
+                faq4A: "<p>最低1分以上記録した場合のみ映像が生成されます。また、デバイスに十分な<strong>保存容量</strong>があるか、カメラの権限が常に許可されているか確認してください。</p>",
+                faq5Q: "他の人がカメラに映り込んだ場合はどうなりますか？",
+                faq5A: "<p>Klockは特定の個人を識別するのではなく、「人 (Person)」の形を検知します。最も正確な測定結果を得るため、できるだけご自身のみが映る環境で勉強されることをお勧めします。</p>",
+
+                troubleTitle: "トラブルシューティング (Troubleshooting)",
+                trouble1: "<strong>認識失敗:</strong> 暗すぎる環境でないか、カメラレンズに汚れがないか確認してください。",
+                trouble2: "<strong>通知の問題:</strong> 休憩終了の通知が届かない場合は、システム設定でアプリの通知権限が許可されているか確認してください。",
+                footerNote: "本ページの内容は最新のプライバシーポリシーに準拠しています。",
+
+                privacyTitle: "プライバシーポリシー (Privacy Policy)",
+                privacyUpdate: "<strong>最終更新日: 2026年1月31日</strong>",
+
+                privacyH1: "1. 収集するデータ",
+                privacyH1L1: "<strong>カメラデータ:</strong> AIによる集中力確認とタイムラプス映像生成のため、カメラへのアクセスが必要です。本アプリは<strong>顔の識別や生体情報 (Biometrics) は収集しません。</strong>AIモデルは画面内の「人(Person)」の有無と領域のみを検知 (Segmentation) します。",
+                privacyH1L2: "<strong>画像・動画:</strong> 勉強セッション中に撮影されたスナップショットや生成されたタイムラプス動画は、デバイスに保存されます。",
+                privacyH1L3: "<strong>アプリ使用履歴:</strong> 勉強時間、休憩時間、統計情報など。",
+
+                privacyH2: "2. データ処理と保管 (重要)",
+                privacyH2L1: "<strong>ローカル処理 (Local Processing):</strong> カメラを通じて入力された映像データは、オンデバイスAI (TFLite) によってユーザーのデバイス内でのみリアルタイムに処理されます。<strong>外部サーバーへ送信されたり、共有されたりすることはありません。</strong>すべての分析は匿名化された状態で実行されます。",
+                privacyH2L2: "<strong>ローカル保存 (Local Storage):</strong> 生成されたスナップショット画像およびタイムラプス動画ファイルは、ユーザーのデバイス内部のストレージにのみ保存されます。ユーザーが自ら削除するか、アプリを削除するまでデバイス上に安全に保管されます。私たち (開発者) はそのデータにアクセスする権限や技術的手段を持っていません。",
+
+                privacyH3: "3. データの収集目的",
+                privacyH3L1: "アプリのコア機能であるAI集中力分析の提供",
+                privacyH3L2: "ユーザーの学習記録の保存とタイムラプス映像の生成",
+                privacyH3L3: "学習統計とダッシュボードの表示",
+
+                privacyH4: "4. 第三者提供と委託",
+                privacyH4Desc: "本アプリは、ユーザーの個人情報を外部に提供したり委託したりすることはありません。すべてのデータ処理はユーザーのデバイス内で完結します。",
+
+                privacyH5: "5. ユーザーの権利",
+                privacyH5Desc: "ユーザーはいつでもアプリの設定を通じてカメラへのアクセス権を撤回したり、保存された学習記録や映像データを削除したりすることができます。",
+
+                privacyTitleIntro: "プライバシーポリシー",
+                privacyIntro: "Klock (以下「本アプリ」) は、ユーザーの個人情報を尊重し、関連法規を遵守します。本ポリシーは、当社の集中力追跡およびタイムラプス機能に関する情報の取り扱いについて説明するものです。",
+
+                footerCopyright: "&copy; 2026 クロック (Klock). All rights reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('klock_lang', lang);
+            document.getElementById('languageSelect').value = lang;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+
+            // Reapply CSS gradients if title changes width, etc.
+            const langSelect = document.getElementById('languageSelect');
+            if (langSelect) {
+                langSelect.value = lang;
+            }
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('klock_lang');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            } else {
+                const userLang = navigator.language || navigator.userLanguage;
+                let defaultLang = 'en';
+                if (userLang.startsWith('ko')) {
+                    defaultLang = 'ko';
+                } else if (userLang.startsWith('ja')) {
+                    defaultLang = 'ja';
+                }
+                setLanguage(defaultLang);
+            }
+        }
+
         function showSection(sectionId, updateHash = true) {
             // Toggle Content
             document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
@@ -638,7 +861,10 @@
             }
         }
 
-        window.addEventListener('load', handleRouting);
+        window.addEventListener('load', () => {
+            initLanguage();
+            handleRouting();
+        });
         window.addEventListener('hashchange', handleRouting);
     </script>
 </body>
