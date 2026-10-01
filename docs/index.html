@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>클라크 - Support & Privacy</title>
+    <title>클라크 - 고객 지원 및 개인정보 처리방침</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -367,6 +367,16 @@
             font-weight: bold;
         }
 
+        .content-section a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
         strong {
             color: #fff;
             font-weight: 600;
@@ -456,8 +466,7 @@
         <div class="logo" data-i18n="logo">클라크</div>
         <div class="sub-logo" data-i18n="subLogo">KLOCK Support</div>
         <nav>
-            <button id="btn-support" class="active" onclick="showSection('support')" data-i18n="navSupport">고객
-                지원</button>
+            <button id="btn-support" class="active" onclick="showSection('support')" data-i18n="navSupport">고객 지원</button>
             <button id="btn-privacy" onclick="showSection('privacy')" data-i18n="navPrivacy">개인정보 처리방침</button>
         </nav>
     </header>
@@ -467,331 +476,373 @@
 
             <!-- Support Section -->
             <section id="support" class="content-section active">
-                <h2 data-i18n="supportTitle">고객 지원 (Support)</h2>
-                <p data-i18n="supportDesc">클라크를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.</p>
+                <h2 data-i18n="supportTitle">고객 지원</h2>
+                <p data-i18n="supportDesc">클라크 3.0을 사용해 주셔서 감사합니다. 앉기만 하면 공부가 기록되고, 프린트를 찍으면 AI가 정리해 읽어 줘요. 궁금한 점이나 문제가 있으면 아래로 문의해 주세요.</p>
 
                 <div class="screenshot-container">
                     <div class="screenshot-slider">
                         <div class="glass-image-card">
-                            <img src="study_screen.png" alt="클라크 공부 화면" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen1">실시간
-                                AI 집중도 측정</p>
+                            <img src="measure.jpg" alt="앉기만 하면 공부 기록" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_measure">앉기만 하면 공부 기록</p>
                         </div>
                         <div class="glass-image-card">
-                            <img src="history_list.png" alt="공부 기록 보관함" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen2">공부
-                                기록 보관함</p>
+                            <img src="history.jpg" alt="공부 잔디와 날짜별 기록" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_history">공부 잔디와 날짜별 기록</p>
                         </div>
                         <div class="glass-image-card">
-                            <img src="history_detail.png" alt="타임랩스 확인" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen3">
-                                타임랩스 비디오 기록</p>
+                            <img src="briefing.jpg" alt="AI 브리핑: 프린트 정리" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_briefing">AI 브리핑: 프린트 정리</p>
                         </div>
                         <div class="glass-image-card">
-                            <img src="exam_timer.png" alt="시험 타이머" class="screenshot">
-                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen4">실전
-                                모의고사 타이머</p>
+                            <img src="listen.jpg" alt="개념 듣기" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_listen">개념 듣기</p>
+                        </div>
+                        <div class="glass-image-card">
+                            <img src="quiz.jpg" alt="확인 문제와 다시 보기" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_quiz">확인 문제와 다시 보기</p>
+                        </div>
+                        <div class="glass-image-card">
+                            <img src="exam.jpg" alt="실전 시험 타이머" class="screenshot" loading="lazy">
+                            <p style="margin-top: 15px; font-size: 14px; color: var(--primary);" data-i18n="screen_exam">실전 시험 타이머</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-box">
-                    <p data-i18n="contactEmail">문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a>
-                    </p>
-                    <p data-i18n="contactCommunity">커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions"
-                            target="_blank">GitHub Discussions</a></p>
+                    <p data-i18n="contactEmail">문의 이메일: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></p>
+                    <p data-i18n="contactCommunity">커뮤니티: <a href="https://github.com/chanoo/klock-app/discussions" target="_blank">GitHub Discussions</a></p>
                 </div>
 
-                <h3 data-i18n="faqTitle">자주 묻는 질문 (FAQ)</h3>
+                <h3 data-i18n="faqTitle">자주 묻는 질문</h3>
 
                 <div class="faq-item">
                     <div class="faq-q" data-i18n="faq1Q">카메라 권한이 왜 필요한가요?</div>
-                    <div class="faq-a" data-i18n="faq1A">
-                        <p>앱의 핵심 기능인 <strong>AI 집중도 분석</strong> 및 <strong>타임랩스 비디오 생성</strong>을 위해 필요합니다. 클라크는 사용자가 실제
-                            공부 중인지 감지하고, 공부가 끝나면 멋진 기록 영상을 만들어 드립니다.</p>
-                    </div>
+                    <div class="faq-a" data-i18n="faq1A"><p>두 가지에 써요. <strong>공부 시간 측정</strong>(자리에 앉아 공부하는지 알아보고 타임랩스를 남기는 데)과, <strong>브리핑</strong>에서 프린트를 찍을 때예요.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-q" data-i18n="faq2Q">내 얼굴 데이터가 서버로 전송되나요?</div>
-                    <div class="faq-a" data-i18n="faq2A">
-                        <p>아니요. 모든 인공지능 분석은 <strong>사용자의 스마트폰 내(On-Device)</strong>에서만 이루어집니다. 영상 피드나 얼굴 데이터는 외부 서버로 절대
-                            전송되지 않으며, 당사도 접근할 수 없습니다.</p>
-                    </div>
+                    <div class="faq-q" data-i18n="faq2Q">공부할 때 카메라 영상이 서버로 가나요?</div>
+                    <div class="faq-a" data-i18n="faq2A"><p>아니요. 공부 측정 영상은 <strong>기기 안(On-Device)</strong>에서만 분석되고 서버로 보내지 않아요. 서버로 가는 건 브리핑을 만들려고 <strong>직접 올린 프린트 사진</strong>뿐이에요.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-q" data-i18n="faq3Q">공부 중 스마트폰이 뜨거워져요.</div>
-                    <div class="faq-a" data-i18n="faq3A">
-                        <p>실시간으로 AI 모델을 구동하기에 다소 열이 발생할 수 있습니다. 발열을 줄이려면 <strong>'절전 모드(ECO)'</strong>를 활성화해 주세요. 화면 밝기를
-                            줄이고 연산을 최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>
-                    </div>
+                    <div class="faq-q" data-i18n="faq3Q">휴식은 어떻게 쌓이나요?</div>
+                    <div class="faq-a" data-i18n="faq3A"><p><strong>5분 공부할 때마다 휴식 1분</strong>이 쌓여요(최대 20분). 자리를 비우면 쌓인 휴식을 쓰고, 휴식 안에 돌아오면 연속 공부가 이어져요. 휴식을 다 쓰면 마지막으로 감지된 시각에 공부가 끝난 것으로 기록돼요.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-q" data-i18n="faq4Q">타임랩스 영상이 만들어지지 않아요.</div>
-                    <div class="faq-a" data-i18n="faq4A">
-                        <p>최소 공부 시간(1분) 이상 기록해야 영상이 생성됩니다. 또한 기기의 <strong>저장 공간</strong>이 충분한지, 카메라 권한이 항상 허용되어 있는지 확인해
-                            주세요.</p>
-                    </div>
+                    <div class="faq-q" data-i18n="faq4Q">ECO와 LIVE는 뭐가 다른가요?</div>
+                    <div class="faq-a" data-i18n="faq4A"><p><strong>ECO</strong>는 카메라 미리보기 없이 감지 간격을 늘려 배터리를 아껴요. <strong>LIVE</strong>는 카메라 화면을 보면서 측정해요. 두 모드를 바꿔도 측정은 이어져요.</p></div>
                 </div>
-
                 <div class="faq-item">
-                    <div class="faq-q" data-i18n="faq5Q">다른 사람이 카메라에 잡히면 어떻게 되나요?</div>
-                    <div class="faq-a" data-i18n="faq5A">
-                        <p>클라크는 특정 인물을 식별하는 것이 아니라 '사람(Person)'의 형태를 감지합니다. 가급적 사용자 본인만 나오는 환경에서 공부하시는 것이 가장 정확한 측정 결과를
-                            제공합니다.</p>
-                    </div>
+                    <div class="faq-q" data-i18n="faq5Q">공부한 시간이 기록되지 않았어요.</div>
+                    <div class="faq-a" data-i18n="faq5A"><p><strong>1분 미만</strong>의 측정은 기록에 남기지 않아요. 측정 중 앱을 나가 있으면 그동안은 자리를 비운 것으로 보고 휴식을 써요.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" data-i18n="faq6Q">브리핑 정리가 끝나지 않아요.</div>
+                    <div class="faq-a" data-i18n="faq6A"><p>브리핑의 AI 정리와 음성 만들기는 <strong>인터넷 연결</strong>이 필요해요. 쪽 수에 따라 몇 분 걸릴 수 있고, 앱을 닫았다 다시 열어도 진행 상황을 이어서 확인할 수 있어요.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" data-i18n="faq7Q">인터넷 없이도 쓸 수 있나요?</div>
+                    <div class="faq-a" data-i18n="faq7A"><p>공부 측정·기록·시험 타이머는 인터넷 없이도 그대로 쓸 수 있어요. 브리핑의 새 정리와 새 음성은 인터넷이 필요하고, 한 번 받은 음성은 다시 들을 수 있어요.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" data-i18n="faq8Q">프린트를 지우면 어떻게 되나요?</div>
+                    <div class="faq-a" data-i18n="faq8A"><p>기기에 있는 사진·정리·음성과 함께 <strong>서버에 저장된 사진과 정리 자료도 지워져요</strong>. 인터넷이 없을 때 지웠다면 다음에 연결될 때 서버에서 지워요.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" data-i18n="faq9Q">공부 기록이 백업되나요?</div>
+                    <div class="faq-a" data-i18n="faq9A"><p>iPhone의 <strong>iCloud</strong>에 자동으로 백업돼, 앱을 다시 설치해도 공부 기록과 시험을 되찾을 수 있어요. 프린트 사진은 iCloud에 백업되지 않아요.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q" data-i18n="faq10Q">다른 사람이 카메라에 잡히면 어떻게 되나요?</div>
+                    <div class="faq-a" data-i18n="faq10A"><p>클라크는 특정 인물을 알아보지 않고 사람(Person)의 형태만 감지해요. 본인만 보이는 곳에서 공부하면 가장 정확해요.</p></div>
                 </div>
 
-                <h3 data-i18n="troubleTitle">문제 해결 (Troubleshooting)</h3>
+                <h3 data-i18n="troubleTitle">문제 해결</h3>
                 <ul>
-                    <li data-i18n="trouble1"><strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.</li>
-                    <li data-i18n="trouble2"><strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.
-                    </li>
+                    <li data-i18n="trouble1"><strong>공부 중인데 자꾸 끊겨요:</strong> 상반신이 화면에 충분히 크게 보이도록 폰 위치를 조정해 주세요. 너무 멀면 몸이 작게 잡혀 놓칠 수 있어요.</li>
+                    <li data-i18n="trouble2"><strong>인식이 잘 안 돼요:</strong> 너무 어둡지 않은지, 카메라 렌즈에 이물질이 없는지 확인해 주세요.</li>
+                    <li data-i18n="trouble3"><strong>폰이 뜨거워져요:</strong> ECO 모드를 쓰면 감지 간격을 늘려 발열과 배터리 사용을 줄여요.</li>
                 </ul>
 
                 <hr>
                 <div style="text-align: center;">
-                    <p style="font-size: 14px;" data-i18n="footerNote">본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.</p>
+                    <p style="font-size: 14px;" data-i18n="footerNote">본 페이지의 내용은 최신 개인정보 처리방침을 따릅니다.</p>
                 </div>
             </section>
 
             <!-- Privacy Section -->
             <section id="privacy" class="content-section">
-                <h2 data-i18n="privacyTitle">개인정보 처리방침 (Privacy Policy)</h2>
-                <p data-i18n="privacyUpdate"><strong>마지막 업데이트: 2026년 1월 31일</strong></p>
+                <h2 data-i18n="privacyTitle">개인정보 처리방침</h2>
+                <p data-i18n="privacyUpdate"><strong>시행일: 2026년 10월 2일 (클라크 3.0)</strong></p>
 
                 <hr>
 
-                <h3 data-i18n="privacyTitleIntro">개인정보 처리방침</h3>
-                <p data-i18n="privacyIntro">'클라크'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력
-                    분석 및 타임랩스 기록 기능과 관련하여 어떠한 정보를 어떻게 처리하는지 설명합니다.</p>
+                <p data-i18n="privacyIntro">'클라크'(이하 '앱')는 이용자의 개인정보를 소중히 다루며 「개인정보 보호법」 등 관련 법령을 지킵니다. 이 방침은 앱이 어떤 정보를 왜 처리하고, 어디에 보관하며, 언제 지우는지 설명합니다. 앱은 회원가입이 없으며 이름·이메일·전화번호를 수집하지 않습니다.</p>
 
-                <h4 data-i18n="privacyH1">1. 처리하는 데이터 항목</h4>
+                <h4 data-i18n="privacyH1">1. 처리하는 정보</h4>
                 <ul>
-                    <li data-i18n="privacyH1L1"><strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이
-                        필요합니다. 본 앱은 <strong>얼굴 식별이나 생체 정보(Biometrics)를 수집하지 않습니다.</strong> AI 모델은 오직 화면 내 '인물(Person)'의
-                        존재 여부 및 영역만을 감지(Segmentation)합니다.</li>
-                    <li data-i18n="privacyH1L2"><strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.
-                    </li>
-                    <li data-i18n="privacyH1L3"><strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.</li>
+                    <li data-i18n="privacyH1L1"><strong>공부 측정 카메라 영상:</strong> 자리에 사람이 있는지만 기기 안의 AI가 감지합니다(얼굴 식별·생체 정보 수집 없음). <strong>영상은 서버로 전송되지 않습니다.</strong> 타임랩스용 사진은 기기에만 저장됩니다.</li>
+                    <li data-i18n="privacyH1L2"><strong>공부 기록·시험 설정:</strong> 공부 시간, 휴식, 시험 일정 등. 기기에 저장되며, 이용자 본인의 iCloud에 백업됩니다.</li>
+                    <li data-i18n="privacyH1L3"><strong>브리핑 자료:</strong> 이용자가 직접 올린 프린트 사진, AI가 만든 정리·문제, 학습 진행 상황.</li>
+                    <li data-i18n="privacyH1L4"><strong>익명 식별자:</strong> 브리핑을 쓸 때 자동으로 만들어지는 익명 계정 ID. 이용자를 직접 알아볼 수 있는 정보는 포함하지 않습니다.</li>
+                    <li data-i18n="privacyH1L5"><strong>이용 통계·오류 정보:</strong> 앱 이용 통계와 오류 기록, 기기 모델·OS 버전 등.</li>
                 </ul>
-
-                <h4 data-i18n="privacyH2">2. 데이터 처리 및 보관 (중요)</h4>
+                <h4 data-i18n="privacyH2">2. 이용 목적</h4>
                 <ul>
-                    <li data-i18n="privacyH2L1"><strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스
-                        AI(TFLite)를 통해 사용자 기기 내에서만 실시간으로 처리됩니다. <strong>외부 서버로 전송되거나 공유되지 않습니다.</strong> 모든 분석은 비식별화된
-                        상태로 수행됩니다.</li>
-                    <li data-i18n="privacyH2L2"><strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의
-                        기기 내부 저장소에만 저장됩니다. 사용자가 직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적
-                        수단이 없습니다.</li>
+                    <li data-i18n="privacyH2L1">공부 시간 자동 측정, 기록·통계와 타임랩스 제공</li>
+                    <li data-i18n="privacyH2L2">브리핑: 프린트를 정리하고, 개념을 읽어 주고, 확인 문제를 만드는 기능 제공</li>
+                    <li data-i18n="privacyH2L3">앱 품질 개선과 오류 해결</li>
                 </ul>
-
-                <h4 data-i18n="privacyH3">3. 데이터 수집 목적</h4>
+                <h4 data-i18n="privacyH3">3. 보관과 파기</h4>
                 <ul>
-                    <li data-i18n="privacyH3L1">앱의 핵심 기능인 AI 집중도 분석 제공</li>
-                    <li data-i18n="privacyH3L2">사용자 공부 기록 보존 및 타임랩스 영상 생성</li>
-                    <li data-i18n="privacyH3L3">학습 통계 및 대시보드 제공</li>
+                    <li data-i18n="privacyH3L1"><strong>기기 정보:</strong> 이용자가 지우거나 앱을 삭제할 때까지 기기에 보관됩니다. 설정의 초기화로 지울 수 있습니다.</li>
+                    <li data-i18n="privacyH3L2"><strong>서버의 브리핑 자료:</strong> 이용자가 프린트를 지우면 서버의 사진과 정리 자료도 함께 지웁니다. 앱만 삭제하면 서버 자료가 남을 수 있으니, 지우기를 원하면 아래 이메일로 요청해 주세요.</li>
+                    <li data-i18n="privacyH3L3"><strong>이용 통계·오류 정보:</strong> 각 서비스의 보관 기간에 따라 자동으로 지워집니다.</li>
                 </ul>
-
-                <h4 data-i18n="privacyH4">4. 제3자 제공 및 위탁</h4>
-                <p data-i18n="privacyH4Desc">앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.</p>
-
-                <h4 data-i18n="privacyH5">5. 사용자의 권리</h4>
-                <p data-i18n="privacyH5Desc">사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.</p>
-
+                <h4 data-i18n="privacyH4">4. 처리 위탁과 국외 이전</h4>
+                <ul>
+                    <li data-i18n="privacyH4L1"><strong>Supabase Inc.(미국)</strong> — 브리핑 자료 저장과 익명 인증. 서버 위치: 대한민국 서울(AWS ap-northeast-2).</li>
+                    <li data-i18n="privacyH4L2"><strong>OpenAI, L.L.C.(미국)</strong> — 프린트 사진·글을 분석해 정리와 확인 문제를 만듭니다. API로 보낸 데이터는 OpenAI 정책에 따라 모델 학습에 쓰이지 않습니다.</li>
+                    <li data-i18n="privacyH4L3"><strong>Google LLC(미국)</strong> — 정리한 개념 글을 음성으로 바꾸는 Google Cloud Text-to-Speech, 이용 통계(Firebase Analytics)와 오류 기록(Firebase Crashlytics).</li>
+                    <li data-i18n="privacyH4L4"><strong>Apple Inc.(미국)</strong> — 이용자 본인 iCloud 계정으로의 공부 기록 백업.</li>
+                    <li data-i18n="privacyH4L5">국외 이전은 브리핑 등 해당 기능을 쓸 때 인터넷으로 전송되는 방식으로 이루어지며, 브리핑을 쓰지 않으면 프린트 관련 정보는 전송되지 않습니다.</li>
+                </ul>
+                <h4 data-i18n="privacyH5">5. 이용자의 권리</h4>
+                <ul>
+                    <li data-i18n="privacyH5L1">카메라·사진 권한은 iPhone 설정에서 언제든 철회할 수 있습니다.</li>
+                    <li data-i18n="privacyH5L2">공부 기록은 앱의 설정 → 초기화로, 프린트는 브리핑에서 삭제로 지울 수 있습니다.</li>
+                    <li data-i18n="privacyH5L3">서버에 남은 자료의 열람·삭제를 원하면 아래 이메일로 요청해 주세요.</li>
+                </ul>
+                <h4 data-i18n="privacyH6">6. 문의</h4>
+                <ul>
+                    <li data-i18n="privacyH6L1">개인정보 관련 문의: <a href="mailto:fastchanoo@gmail.com">fastchanoo@gmail.com</a></li>
+                </ul>
             </section>
         </div>
     </div>
 
     <footer>
-        <span data-i18n="footerCopyright">&copy; 2026 클라크. All rights reserved.</span>
+        <span data-i18n="footerCopyright">&copy; 2026 KLOCK (클라크). All rights reserved.</span>
     </footer>
 
     <script>
         const translations = {
-            ko: {
-                logo: "클라크",
-                subLogo: "KLOCK Support",
-                navSupport: "고객 지원",
-                navPrivacy: "개인정보 처리방침",
-
-                supportTitle: "고객 지원",
-                supportDesc: "KLOCK (클라크)를 사용해 주셔서 감사합니다. 앱 사용 중 궁금한 점이나 문제가 발생하면 아래 채널로 문의해 주세요.",
-                screen1: "실시간 AI 집중도 측정",
-                screen2: "공부 기록 보관함",
-                screen3: "타임랩스 비디오 기록",
-                screen4: "실전 모의고사 타이머",
-                contactEmail: "문의 이메일: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
-                contactCommunity: "커뮤니티: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
-                faqTitle: "자주 묻는 질문",
-
-                faq1Q: "카메라 권한이 왜 필요한가요?",
-                faq1A: "<p>앱의 핵심 기능인 <strong>AI 집중도 분석</strong> 및 <strong>타임랩스 비디오 생성</strong>을 위해 필요합니다. KLOCK (클라크)는 사용자가 실제 공부 중인지 감지하고, 공부가 끝나면 멋진 기록 영상을 만들어 드립니다.</p>",
-                faq2Q: "내 얼굴 데이터가 서버로 전송되나요?",
-                faq2A: "<p>아니요. 모든 인공지능 분석은 <strong>사용자의 스마트폰 내(On-Device)</strong>에서만 이루어집니다. 영상 피드나 얼굴 데이터는 외부 서버로 절대 전송되지 않으며, 당사도 접근할 수 없습니다.</p>",
-                faq3Q: "공부 중 스마트폰이 뜨거워져요.",
-                faq3A: "<p>실시간으로 AI 모델을 구동하기에 다소 열이 발생할 수 있습니다. 발열을 줄이려면 <strong>'절전 모드(ECO)'</strong>를 활성화해 주세요. 화면 밝기를 줄이고 연산을 최적화하여 배터리와 발열을 효과적으로 관리합니다.</p>",
-                faq4Q: "타임랩스 영상이 만들어지지 않아요.",
-                faq4A: "<p>최소 공부 시간(1분) 이상 기록해야 영상이 생성됩니다. 또한 기기의 <strong>저장 공간</strong>이 충분한지, 카메라 권한이 항상 허용되어 있는지 확인해 주세요.</p>",
-                faq5Q: "다른 사람이 카메라에 잡히면 어떻게 되나요?",
-                faq5A: "<p>KLOCK (클라크)는 특정 인물을 식별하는 것이 아니라 '사람(Person)'의 형태를 감지합니다. 가급적 사용자 본인만 나오는 환경에서 공부하시는 것이 가장 정확한 측정 결과를 제공합니다.</p>",
-
-                troubleTitle: "문제 해결",
-                trouble1: "<strong>인식 실패:</strong> 너무 어두운 환경이거나 카메라 렌즈상에 이물질이 있는지 확인해 주세요.",
-                trouble2: "<strong>알림 문제:</strong> 휴식 시간 종료 알림이 오지 않는다면 시스템 설정에서 앱 알림 권한을 확인해 주세요.",
-                footerNote: "본 페이지의 내용은 최신 개인정보 처리방침을 준수합니다.",
-
-                privacyTitle: "개인정보 처리방침",
-                privacyUpdate: "<strong>마지막 업데이트: 2026년 1월 31일</strong>",
-
-                privacyH1: "1. 처리하는 데이터 항목",
-                privacyH1L1: "<strong>카메라 데이터:</strong> AI를 통한 집중도 확인 및 타임랩스 영상 생성을 위해 카메라 접근 권한이 필요합니다. 본 앱은 <strong>얼굴 식별이나 생체 정보(Biometrics)를 수집하지 않습니다.</strong> AI 모델은 오직 화면 내 '인물(Person)'의 존재 여부 및 영역만을 감지(Segmentation)합니다.",
-                privacyH1L2: "<strong>이미지 및 비디오:</strong> 공부 세션 중 촬영된 스냅샷과 생성된 타임랩스 영상이 기기에 저장됩니다.",
-                privacyH1L3: "<strong>앱 사용 기록:</strong> 공부 시간, 휴식 시간, 통계 정보 등.",
-
-                privacyH2: "2. 데이터 처리 및 보관 (중요)",
-                privacyH2L1: "<strong>로컬 처리 (Local Processing):</strong> 카메라 통해 입력되는 영상 데이터는 온디바이스 AI(TFLite)를 통해 사용자 기기 내에서만 실시간으로 처리됩니다. <strong>외부 서버로 전송되거나 공유되지 않습니다.</strong> 모든 분석은 비식별화된 상태로 수행됩니다.",
-                privacyH2L2: "<strong>로컬 저장 (Local Storage):</strong> 생성된 스냅샷 이미지 및 타임랩스 비디오 파일은 사용자의 기기 내부 저장소에만 저장됩니다. 사용자가 직접 삭제하거나 앱을 삭제하기 전까지 기기에 안전하게 보관됩니다. 우리(개발자)는 이 데이터에 접근할 수 있는 권한이나 기술적 수단이 없습니다.",
-
-                privacyH3: "3. 데이터 수집 목적",
-                privacyH3L1: "앱의 핵심 기능인 AI 집중도 분석 제공",
-                privacyH3L2: "사용자 공부 기록 보존 및 타임랩스 영상 생성",
-                privacyH3L3: "학습 통계 및 대시보드 제공",
-
-                privacyH4: "4. 제3자 제공 및 위탁",
-                privacyH4Desc: "앱은 사용자의 개인정보를 외부에 제공하거나 위탁하지 않습니다. 모든 데이터 처리는 사용자 기기 내에서 완결됩니다.",
-
-                privacyH5: "5. 사용자의 권리",
-                privacyH5Desc: "사용자는 언제든지 앱 설정을 통해 카메라 접근 권한을 철회하거나, 저장된 공부 기록 및 영상 데이터를 삭제할 수 있습니다.",
-
-                privacyTitleIntro: "개인정보 처리방침",
-                privacyIntro: "'클라크'(이하 '앱')는 사용자의 개인정보를 소중하게 생각하며, 관련 법령을 준수합니다. 본 방침은 앱이 제공하는 집중력 분석 및 타임랩스 기록 기능과 관련하여 어떠한 정보를 어떻게 처리하는지 설명합니다.",
-
-                footerCopyright: "&copy; 2026 KLOCK (클라크). All rights reserved."
-            },
-            en: {
-                logo: "KLOCK",
-                subLogo: "KLOCK Support",
-                navSupport: "Support",
-                navPrivacy: "Privacy Policy",
-
-                supportTitle: "Support",
-                supportDesc: "Thank you for using KLOCK. If you have any questions or encounter issues while using the app, please contact us through the channels below.",
-                screen1: "Real-time AI Focus Tracking",
-                screen2: "Study History Archive",
-                screen3: "Timelapse Video Log",
-                screen4: "Mock Exam Timer",
-                contactEmail: "Email: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
-                contactCommunity: "Community: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
-                faqTitle: "Frequently Asked Questions (FAQ)",
-
-                faq1Q: "Why do you need camera access?",
-                faq1A: "<p>It is required for the app's core features: <strong>AI focus analysis</strong> and <strong>timelapse video generation</strong>. KLOCK detects if you are actually studying and creates a cool timelapse video when you're done.</p>",
-                faq2Q: "Is my face data sent to a server?",
-                faq2A: "<p>No. All AI analysis is processed <strong>strictly on-device</strong> within your smartphone. The video feed and facial data are never transmitted to external servers, and we have no access to them.</p>",
-                faq3Q: "My phone gets hot while studying.",
-                faq3A: "<p>Running AI models in real-time can generate some heat. To reduce this, please enable <strong>'ECO Mode'</strong>. It lowers screen brightness and optimizes computation to effectively manage battery and temperature.</p>",
-                faq4Q: "The timelapse video is not being generated.",
-                faq4A: "<p>A video is generated only if you record for a minimum of 1 minute. Please also ensure you have sufficient <strong>storage space</strong> on your device and that camera access is always allowed.</p>",
-                faq5Q: "What happens if someone else is captured on camera?",
-                faq5A: "<p>KLOCK detects the general shape of a 'Person' without identifying specific individuals. For the most accurate measurement, it's best to study in an environment where only you are visible.</p>",
-
-                troubleTitle: "Troubleshooting",
-                trouble1: "<strong>Detection Failure:</strong> Make sure the environment is not too dark and there is no smudge on the camera lens.",
-                trouble2: "<strong>Notification Issue:</strong> If you don't receive the break time over notification, check your system settings to ensure app notifications are allowed.",
-                footerNote: "The content on this page complies with our latest privacy policy.",
-
-                privacyTitle: "Privacy Policy",
-                privacyUpdate: "<strong>Last Updated: January 31, 2026</strong>",
-
-                privacyH1: "1. Data Collected",
-                privacyH1L1: "<strong>Camera Data:</strong> Access is required for AI-based focus tracking and snapshot recording. The app <strong>does NOT collect face recognition or biometric data.</strong> Our on-device AI model only performs human 'person' detection and segmentation.",
-                privacyH1L2: "<strong>Images and Videos:</strong> Snapshots and generated timelapse videos are stored on your device.",
-                privacyH1L3: "<strong>Usage Data:</strong> Study duration, break times, and productivity statistics.",
-
-                privacyH2: "2. Data Processing & Storage (Crucial)",
-                privacyH2L1: "<strong>On-Device AI Processing:</strong> All camera input is processed in real-time on your device using on-device AI (TFLite). <strong>No camera feed, facial data, or images are uploaded to any external servers or shared with third parties.</strong>",
-                privacyH2L2: "<strong>Local Storage:</strong> All snapshots and timelapse videos are stored exclusively in your device's internal storage. We do not have access to these files and cannot retrieve them.",
-
-                privacyH3: "3. Purpose of Processing",
-                privacyH3L1: "To provide AI-powered focus tracking",
-                privacyH3L2: "To generate and save study history and timelapse videos",
-                privacyH3L3: "To display personal productivity stats and dashboards",
-
-                privacyH4: "4. Third-Party Sharing",
-                privacyH4Desc: "We do not share, sell, or transfer your personal data to any third parties. All processing is localized to your device.",
-
-                privacyH5: "5. User Rights",
-                privacyH5Desc: "You can revoke camera access at any time through the app settings, or delete your saved study records and video data.",
-
-                privacyTitleIntro: "Privacy Policy",
-                privacyIntro: "KLOCK (hereinafter \"the App\") values your privacy and complies with data protection laws. This policy explains how we handle your information regarding our focus tracking and timelapse features.",
-
-                footerCopyright: "&copy; 2026 KLOCK. All rights reserved."
-            },
-            ja: {
-                logo: "クラーク",
-                subLogo: "KLOCK Support",
-                navSupport: "サポート",
-                navPrivacy: "プライバシーポリシー",
-
-                supportTitle: "サポート",
-                supportDesc: "クラークをご利用いただきありがとうございます。アプリのご利用中にご不明な点や問題が発生した場合は、以下のチャネルまでお問い合わせください。",
-                screen1: "リアルタイムAI集中力測定",
-                screen2: "学習記録アーカイブ",
-                screen3: "タイムラプスビデオ記録",
-                screen4: "本番向け模試タイマー",
-                contactEmail: "メールお問い合わせ: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
-                contactCommunity: "コミュニティ: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
-                faqTitle: "よくあるご質問",
-
-                faq1Q: "なぜカメラへのアクセスが必要なのですか？",
-                faq1A: "<p>アプリのコア機能である<strong>AI集中力分析</strong>と<strong>タイムラプスビデオ作成</strong>のために必要です。クラークは実際に勉強しているかを検知し、終了後に素晴らしい記録映像を作成します。</p>",
-                faq2Q: "私の顔データはサーバーに送信されますか？",
-                faq2A: "<p>いいえ。すべてのAI分析は<strong>スマートフォンのデバイス上 (On-Device) </strong>においてのみ処理されます。映像フィードや顔データが外部サーバーに送信されることは決してなく、当社がアクセスすることもありません。</p>",
-                faq3Q: "勉強中にスマートフォンが熱くなります。",
-                faq3A: "<p>リアルタイムでAIモデルを稼働させるため、ある程度の熱が発生することがあります。発熱を抑えるには<strong>「エコ（ECO）モード」</strong>を有効にしてください。画面の明るさを下げ、計算処理を最適化することで、バッテリーと発熱を効果的に管理します。</p>",
-                faq4Q: "タイムラプスビデオが作成されません。",
-                faq4A: "<p>最低1分以上記録した場合のみ映像が生成されます。また、デバイスに十分な<strong>保存容量</strong>があるか、カメラの権限が常に許可されているか確認してください。</p>",
-                faq5Q: "他の人がカメラに映り込んだ場合はどうなりますか？",
-                faq5A: "<p>クラークは特定の個人を識別するのではなく、「人 (Person)」の形を検知します。最も正確な測定結果を得るため、できるだけご自身のみが映る環境で勉強されることをお勧めします。</p>",
-
-                troubleTitle: "トラブルシューティング",
-                trouble1: "<strong>認識失敗:</strong> 暗すぎる環境でないか、カメラレンズに汚れがないか確認してください。",
-                trouble2: "<strong>通知の問題:</strong> 休憩終了の通知が届かない場合は、システム設定でアプリの通知権限が許可されているか確認してください。",
-                footerNote: "本ページの内容は最新のプライバシーポリシーに準拠しています。",
-
-                privacyTitle: "プライバシーポリシー",
-                privacyUpdate: "<strong>最終更新日: 2026年1月31日</strong>",
-
-                privacyH1: "1. 収集するデータ",
-                privacyH1L1: "<strong>カメラデータ:</strong> AIによる集中力確認とタイムラプス映像生成のため、カメラへのアクセスが必要です。本アプリは<strong>顔の識別や生体情報 (Biometrics) は収集しません。</strong>AIモデルは画面内の「人(Person)」の有無と領域のみを検知 (Segmentation) します。",
-                privacyH1L2: "<strong>画像・動画:</strong> 勉強セッション中に撮影されたスナップショットや生成されたタイムラプス動画は、デバイスに保存されます。",
-                privacyH1L3: "<strong>アプリ使用履歴:</strong> 勉強時間、休憩時間、統計情報など。",
-
-                privacyH2: "2. データ処理と保管 (重要)",
-                privacyH2L1: "<strong>ローカル処理 (Local Processing):</strong> カメラを通じて入力された映像データは、オンデバイスAI (TFLite) によってユーザーのデバイス内でのみリアルタイムに処理されます。<strong>外部サーバーへ送信されたり、共有されたりすることはありません。</strong>すべての分析は匿名化された状態で実行されます。",
-                privacyH2L2: "<strong>ローカル保存 (Local Storage):</strong> 生成されたスナップショット画像およびタイムラプス動画ファイルは、ユーザーのデバイス内部のストレージにのみ保存されます。ユーザーが自ら削除するか、アプリを削除するまでデバイス上に安全に保管されます。私たち (開発者) はそのデータにアクセスする権限や技術的手段を持っていません。",
-
-                privacyH3: "3. データの収集目的",
-                privacyH3L1: "アプリのコア機能であるAI集中力分析の提供",
-                privacyH3L2: "ユーザーの学習記録の保存とタイムラプス映像の生成",
-                privacyH3L3: "学習統計とダッシュボードの表示",
-
-                privacyH4: "4. 第三者提供と委託",
-                privacyH4Desc: "本アプリは、ユーザーの個人情報を外部に提供したり委託したりすることはありません。すべてのデータ処理はユーザーのデバイス内で完結します。",
-
-                privacyH5: "5. ユーザーの権利",
-                privacyH5Desc: "ユーザーはいつでもアプリの設定を通じてカメラへのアクセス権を撤回したり、保存された学習記録や映像データを削除したりすることができます。",
-
-                privacyTitleIntro: "プライバシーポリシー",
-                privacyIntro: "クラーク (以下「本アプリ」) は、ユーザーの個人情報を尊重し、関連法規を遵守します。本ポリシーは、当社の集中力追跡およびタイムラプス機能に関する情報の取り扱いについて説明するものです。",
-
-                footerCopyright: "&copy; 2026 クラーク. All rights reserved."
-            }
-        };
+    "ko": {
+        "logo": "클라크",
+        "subLogo": "KLOCK Support",
+        "navSupport": "고객 지원",
+        "navPrivacy": "개인정보 처리방침",
+        "supportTitle": "고객 지원",
+        "supportDesc": "클라크 3.0을 사용해 주셔서 감사합니다. 앉기만 하면 공부가 기록되고, 프린트를 찍으면 AI가 정리해 읽어 줘요. 궁금한 점이나 문제가 있으면 아래로 문의해 주세요.",
+        "screen_measure": "앉기만 하면 공부 기록",
+        "screen_history": "공부 잔디와 날짜별 기록",
+        "screen_briefing": "AI 브리핑: 프린트 정리",
+        "screen_listen": "개념 듣기",
+        "screen_quiz": "확인 문제와 다시 보기",
+        "screen_exam": "실전 시험 타이머",
+        "contactEmail": "문의 이메일: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+        "contactCommunity": "커뮤니티: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+        "faqTitle": "자주 묻는 질문",
+        "troubleTitle": "문제 해결",
+        "footerNote": "본 페이지의 내용은 최신 개인정보 처리방침을 따릅니다.",
+        "privacyTitle": "개인정보 처리방침",
+        "privacyUpdate": "<strong>시행일: 2026년 10월 2일 (클라크 3.0)</strong>",
+        "privacyIntro": "'클라크'(이하 '앱')는 이용자의 개인정보를 소중히 다루며 「개인정보 보호법」 등 관련 법령을 지킵니다. 이 방침은 앱이 어떤 정보를 왜 처리하고, 어디에 보관하며, 언제 지우는지 설명합니다. 앱은 회원가입이 없으며 이름·이메일·전화번호를 수집하지 않습니다.",
+        "footerCopyright": "&copy; 2026 KLOCK (클라크). All rights reserved.",
+        "faq1Q": "카메라 권한이 왜 필요한가요?",
+        "faq1A": "<p>두 가지에 써요. <strong>공부 시간 측정</strong>(자리에 앉아 공부하는지 알아보고 타임랩스를 남기는 데)과, <strong>브리핑</strong>에서 프린트를 찍을 때예요.</p>",
+        "faq2Q": "공부할 때 카메라 영상이 서버로 가나요?",
+        "faq2A": "<p>아니요. 공부 측정 영상은 <strong>기기 안(On-Device)</strong>에서만 분석되고 서버로 보내지 않아요. 서버로 가는 건 브리핑을 만들려고 <strong>직접 올린 프린트 사진</strong>뿐이에요.</p>",
+        "faq3Q": "휴식은 어떻게 쌓이나요?",
+        "faq3A": "<p><strong>5분 공부할 때마다 휴식 1분</strong>이 쌓여요(최대 20분). 자리를 비우면 쌓인 휴식을 쓰고, 휴식 안에 돌아오면 연속 공부가 이어져요. 휴식을 다 쓰면 마지막으로 감지된 시각에 공부가 끝난 것으로 기록돼요.</p>",
+        "faq4Q": "ECO와 LIVE는 뭐가 다른가요?",
+        "faq4A": "<p><strong>ECO</strong>는 카메라 미리보기 없이 감지 간격을 늘려 배터리를 아껴요. <strong>LIVE</strong>는 카메라 화면을 보면서 측정해요. 두 모드를 바꿔도 측정은 이어져요.</p>",
+        "faq5Q": "공부한 시간이 기록되지 않았어요.",
+        "faq5A": "<p><strong>1분 미만</strong>의 측정은 기록에 남기지 않아요. 측정 중 앱을 나가 있으면 그동안은 자리를 비운 것으로 보고 휴식을 써요.</p>",
+        "faq6Q": "브리핑 정리가 끝나지 않아요.",
+        "faq6A": "<p>브리핑의 AI 정리와 음성 만들기는 <strong>인터넷 연결</strong>이 필요해요. 쪽 수에 따라 몇 분 걸릴 수 있고, 앱을 닫았다 다시 열어도 진행 상황을 이어서 확인할 수 있어요.</p>",
+        "faq7Q": "인터넷 없이도 쓸 수 있나요?",
+        "faq7A": "<p>공부 측정·기록·시험 타이머는 인터넷 없이도 그대로 쓸 수 있어요. 브리핑의 새 정리와 새 음성은 인터넷이 필요하고, 한 번 받은 음성은 다시 들을 수 있어요.</p>",
+        "faq8Q": "프린트를 지우면 어떻게 되나요?",
+        "faq8A": "<p>기기에 있는 사진·정리·음성과 함께 <strong>서버에 저장된 사진과 정리 자료도 지워져요</strong>. 인터넷이 없을 때 지웠다면 다음에 연결될 때 서버에서 지워요.</p>",
+        "faq9Q": "공부 기록이 백업되나요?",
+        "faq9A": "<p>iPhone의 <strong>iCloud</strong>에 자동으로 백업돼, 앱을 다시 설치해도 공부 기록과 시험을 되찾을 수 있어요. 프린트 사진은 iCloud에 백업되지 않아요.</p>",
+        "faq10Q": "다른 사람이 카메라에 잡히면 어떻게 되나요?",
+        "faq10A": "<p>클라크는 특정 인물을 알아보지 않고 사람(Person)의 형태만 감지해요. 본인만 보이는 곳에서 공부하면 가장 정확해요.</p>",
+        "trouble1": "<strong>공부 중인데 자꾸 끊겨요:</strong> 상반신이 화면에 충분히 크게 보이도록 폰 위치를 조정해 주세요. 너무 멀면 몸이 작게 잡혀 놓칠 수 있어요.",
+        "trouble2": "<strong>인식이 잘 안 돼요:</strong> 너무 어둡지 않은지, 카메라 렌즈에 이물질이 없는지 확인해 주세요.",
+        "trouble3": "<strong>폰이 뜨거워져요:</strong> ECO 모드를 쓰면 감지 간격을 늘려 발열과 배터리 사용을 줄여요.",
+        "privacyH1": "1. 처리하는 정보",
+        "privacyH1L1": "<strong>공부 측정 카메라 영상:</strong> 자리에 사람이 있는지만 기기 안의 AI가 감지합니다(얼굴 식별·생체 정보 수집 없음). <strong>영상은 서버로 전송되지 않습니다.</strong> 타임랩스용 사진은 기기에만 저장됩니다.",
+        "privacyH1L2": "<strong>공부 기록·시험 설정:</strong> 공부 시간, 휴식, 시험 일정 등. 기기에 저장되며, 이용자 본인의 iCloud에 백업됩니다.",
+        "privacyH1L3": "<strong>브리핑 자료:</strong> 이용자가 직접 올린 프린트 사진, AI가 만든 정리·문제, 학습 진행 상황.",
+        "privacyH1L4": "<strong>익명 식별자:</strong> 브리핑을 쓸 때 자동으로 만들어지는 익명 계정 ID. 이용자를 직접 알아볼 수 있는 정보는 포함하지 않습니다.",
+        "privacyH1L5": "<strong>이용 통계·오류 정보:</strong> 앱 이용 통계와 오류 기록, 기기 모델·OS 버전 등.",
+        "privacyH2": "2. 이용 목적",
+        "privacyH2L1": "공부 시간 자동 측정, 기록·통계와 타임랩스 제공",
+        "privacyH2L2": "브리핑: 프린트를 정리하고, 개념을 읽어 주고, 확인 문제를 만드는 기능 제공",
+        "privacyH2L3": "앱 품질 개선과 오류 해결",
+        "privacyH3": "3. 보관과 파기",
+        "privacyH3L1": "<strong>기기 정보:</strong> 이용자가 지우거나 앱을 삭제할 때까지 기기에 보관됩니다. 설정의 초기화로 지울 수 있습니다.",
+        "privacyH3L2": "<strong>서버의 브리핑 자료:</strong> 이용자가 프린트를 지우면 서버의 사진과 정리 자료도 함께 지웁니다. 앱만 삭제하면 서버 자료가 남을 수 있으니, 지우기를 원하면 아래 이메일로 요청해 주세요.",
+        "privacyH3L3": "<strong>이용 통계·오류 정보:</strong> 각 서비스의 보관 기간에 따라 자동으로 지워집니다.",
+        "privacyH4": "4. 처리 위탁과 국외 이전",
+        "privacyH4L1": "<strong>Supabase Inc.(미국)</strong> — 브리핑 자료 저장과 익명 인증. 서버 위치: 대한민국 서울(AWS ap-northeast-2).",
+        "privacyH4L2": "<strong>OpenAI, L.L.C.(미국)</strong> — 프린트 사진·글을 분석해 정리와 확인 문제를 만듭니다. API로 보낸 데이터는 OpenAI 정책에 따라 모델 학습에 쓰이지 않습니다.",
+        "privacyH4L3": "<strong>Google LLC(미국)</strong> — 정리한 개념 글을 음성으로 바꾸는 Google Cloud Text-to-Speech, 이용 통계(Firebase Analytics)와 오류 기록(Firebase Crashlytics).",
+        "privacyH4L4": "<strong>Apple Inc.(미국)</strong> — 이용자 본인 iCloud 계정으로의 공부 기록 백업.",
+        "privacyH4L5": "국외 이전은 브리핑 등 해당 기능을 쓸 때 인터넷으로 전송되는 방식으로 이루어지며, 브리핑을 쓰지 않으면 프린트 관련 정보는 전송되지 않습니다.",
+        "privacyH5": "5. 이용자의 권리",
+        "privacyH5L1": "카메라·사진 권한은 iPhone 설정에서 언제든 철회할 수 있습니다.",
+        "privacyH5L2": "공부 기록은 앱의 설정 → 초기화로, 프린트는 브리핑에서 삭제로 지울 수 있습니다.",
+        "privacyH5L3": "서버에 남은 자료의 열람·삭제를 원하면 아래 이메일로 요청해 주세요.",
+        "privacyH6": "6. 문의",
+        "privacyH6L1": "개인정보 관련 문의: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>"
+    },
+    "en": {
+        "logo": "KLOCK",
+        "subLogo": "KLOCK Support",
+        "navSupport": "Support",
+        "navPrivacy": "Privacy Policy",
+        "supportTitle": "Support",
+        "supportDesc": "Thanks for using KLOCK 3.0. Just sit down and your study time is recorded; snap a handout and AI turns it into notes it can read to you. If you have questions or problems, contact us below.",
+        "screen_measure": "Study time recorded as you sit",
+        "screen_history": "Study heatmap & daily records",
+        "screen_briefing": "AI Briefing: handout notes",
+        "screen_listen": "Listen to concepts",
+        "screen_quiz": "Check questions & review",
+        "screen_exam": "Real-exam timer",
+        "contactEmail": "Email: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+        "contactCommunity": "Community: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+        "faqTitle": "Frequently Asked Questions",
+        "troubleTitle": "Troubleshooting",
+        "footerNote": "This page follows our latest privacy policy.",
+        "privacyTitle": "Privacy Policy",
+        "privacyUpdate": "<strong>Effective: October 2, 2026 (KLOCK 3.0)</strong>",
+        "privacyIntro": "KLOCK (\"the App\") values your privacy and complies with applicable laws, including the Personal Information Protection Act of Korea. This policy explains what we process, why, where it is stored, and when it is deleted. The App has no sign-up and does not collect your name, email or phone number.",
+        "footerCopyright": "&copy; 2026 KLOCK. All rights reserved.",
+        "faq1Q": "Why do you need camera access?",
+        "faq1A": "<p>For two things: <strong>study-time tracking</strong> (recognizing that you are at your desk, and making timelapses) and taking photos of handouts in <strong>Briefing</strong>.</p>",
+        "faq2Q": "Is my camera feed sent to a server while I study?",
+        "faq2A": "<p>No. The study camera feed is analyzed <strong>on-device</strong> only and never uploaded. The only things sent to our server are <strong>handout photos you choose to add</strong> to Briefing.</p>",
+        "faq3Q": "How does break time build up?",
+        "faq3A": "<p>You earn <strong>1 minute of break for every 5 minutes of study</strong> (up to 20 minutes). When you step away, you use your break; come back within it and your streak continues. When it runs out, the session ends at the last moment you were seen.</p>",
+        "faq4Q": "What is the difference between ECO and LIVE?",
+        "faq4A": "<p><strong>ECO</strong> saves battery by checking less often, without a camera preview. <strong>LIVE</strong> shows the camera while tracking. Switching between them keeps the session going.</p>",
+        "faq5Q": "My study time was not recorded.",
+        "faq5A": "<p>Sessions <strong>shorter than 1 minute</strong> are not saved. While the app is in the background, you are treated as away and your break is used.</p>",
+        "faq6Q": "Briefing notes aren't finishing.",
+        "faq6A": "<p>AI notes and audio need an <strong>internet connection</strong>. They can take a few minutes depending on the page count, and you can close and reopen the app to check progress.</p>",
+        "faq7Q": "Can I use the app offline?",
+        "faq7A": "<p>Study tracking, records and the exam timer work offline. New Briefing notes and new audio need the internet; audio you already downloaded can be replayed.</p>",
+        "faq8Q": "What happens when I delete a print?",
+        "faq8A": "<p>Its photos, notes and audio are removed from your device, and <strong>the photos and notes stored on our server are deleted too</strong>. If you are offline, the server copy is removed the next time you connect.</p>",
+        "faq9Q": "Are my study records backed up?",
+        "faq9A": "<p>They are backed up to your <strong>iCloud</strong> automatically, so you can restore study records and exams after reinstalling. Handout photos are not backed up to iCloud.</p>",
+        "faq10Q": "What if someone else appears on camera?",
+        "faq10A": "<p>KLOCK does not identify people; it only detects the shape of a person. It is most accurate when only you are in view.</p>",
+        "trouble1": "<strong>Tracking keeps stopping while I study:</strong> Place your phone so your upper body appears large enough. If it is too far away, you may be missed.",
+        "trouble2": "<strong>Detection does not work well:</strong> Make sure it is not too dark and the lens is clean.",
+        "trouble3": "<strong>My phone gets hot:</strong> ECO mode checks less often to reduce heat and battery use.",
+        "privacyH1": "1. Information we process",
+        "privacyH1L1": "<strong>Study camera feed:</strong> On-device AI only detects whether a person is present (no face recognition or biometric data). <strong>The feed is never uploaded.</strong> Timelapse frames stay on your device.",
+        "privacyH1L2": "<strong>Study records & exam settings:</strong> Study time, breaks and exam schedules, stored on your device and backed up to your own iCloud.",
+        "privacyH1L3": "<strong>Briefing data:</strong> Handout photos you add, AI-generated notes and questions, and your learning progress.",
+        "privacyH1L4": "<strong>Anonymous identifier:</strong> An anonymous account ID created automatically when you use Briefing. It contains nothing that directly identifies you.",
+        "privacyH1L5": "<strong>Usage & crash data:</strong> App usage statistics, crash logs, device model and OS version.",
+        "privacyH2": "2. Purposes",
+        "privacyH2L1": "Automatic study tracking, records, statistics and timelapses",
+        "privacyH2L2": "Briefing: organizing handouts, reading concepts aloud and creating check questions",
+        "privacyH2L3": "Improving app quality and fixing errors",
+        "privacyH3": "3. Retention & deletion",
+        "privacyH3L1": "<strong>On-device data:</strong> Kept until you delete it or the app. You can erase it with Reset in Settings.",
+        "privacyH3L2": "<strong>Briefing data on our server:</strong> Deleted when you delete the print. Deleting only the app may leave server data; email us to have it removed.",
+        "privacyH3L3": "<strong>Usage & crash data:</strong> Deleted automatically according to each service's retention period.",
+        "privacyH4": "4. Processors & international transfer",
+        "privacyH4L1": "<strong>Supabase Inc. (USA)</strong> — Briefing data storage and anonymous authentication. Server location: Seoul, Republic of Korea (AWS ap-northeast-2).",
+        "privacyH4L2": "<strong>OpenAI, L.L.C. (USA)</strong> — Analyzes handout photos and text to create notes and questions. Under OpenAI's policy, data sent through the API is not used to train models.",
+        "privacyH4L3": "<strong>Google LLC (USA)</strong> — Google Cloud Text-to-Speech for narrating notes, Firebase Analytics for usage statistics and Firebase Crashlytics for crash logs.",
+        "privacyH4L4": "<strong>Apple Inc. (USA)</strong> — Backing up study records to your own iCloud account.",
+        "privacyH4L5": "Transfers happen over the internet only when you use the related feature; if you do not use Briefing, no handout data is sent.",
+        "privacyH5": "5. Your rights",
+        "privacyH5L1": "You can revoke camera and photo access in iPhone Settings at any time.",
+        "privacyH5L2": "Delete study records with Settings → Reset in the app, and delete prints in Briefing.",
+        "privacyH5L3": "Email us to access or delete data remaining on our server.",
+        "privacyH6": "6. Contact",
+        "privacyH6L1": "Privacy inquiries: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>"
+    },
+    "ja": {
+        "logo": "クラーク",
+        "subLogo": "KLOCK Support",
+        "navSupport": "サポート",
+        "navPrivacy": "プライバシーポリシー",
+        "supportTitle": "サポート",
+        "supportDesc": "クラーク3.0をご利用いただきありがとうございます。座るだけで勉強が記録され、プリントを撮ればAIがまとめて読み上げます。ご不明な点や問題があれば下記までお問い合わせください。",
+        "screen_measure": "座るだけで勉強を記録",
+        "screen_history": "勉強カレンダーと日ごとの記録",
+        "screen_briefing": "AIブリーフィング：プリント整理",
+        "screen_listen": "概念を聞く",
+        "screen_quiz": "確認問題と見直し",
+        "screen_exam": "本番さながらの試験タイマー",
+        "contactEmail": "メール: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>",
+        "contactCommunity": "コミュニティ: <a href=\"https://github.com/chanoo/klock-app/discussions\" target=\"_blank\">GitHub Discussions</a>",
+        "faqTitle": "よくあるご質問",
+        "troubleTitle": "トラブルシューティング",
+        "footerNote": "本ページの内容は最新のプライバシーポリシーに準拠しています。",
+        "privacyTitle": "プライバシーポリシー",
+        "privacyUpdate": "<strong>施行日: 2026年10月2日（クラーク3.0）</strong>",
+        "privacyIntro": "クラーク（以下「本アプリ」）は、利用者の個人情報を大切に扱い、関連法令を遵守します。本ポリシーは、どの情報をなぜ処理し、どこに保管し、いつ削除するかを説明します。本アプリには会員登録がなく、氏名・メールアドレス・電話番号を収集しません。",
+        "footerCopyright": "&copy; 2026 クラーク. All rights reserved.",
+        "faq1Q": "なぜカメラへのアクセスが必要ですか？",
+        "faq1A": "<p>2つの用途があります。<strong>勉強時間の計測</strong>（席で勉強しているかの認識とタイムラプス）と、<strong>ブリーフィング</strong>でプリントを撮影するときです。</p>",
+        "faq2Q": "勉強中のカメラ映像はサーバーに送られますか？",
+        "faq2A": "<p>いいえ。計測用の映像は<strong>端末内（On-Device）</strong>でのみ分析され、サーバーには送られません。サーバーに送られるのは、ブリーフィングのために<strong>ご自身で追加したプリントの写真</strong>だけです。</p>",
+        "faq3Q": "休憩はどのように貯まりますか？",
+        "faq3A": "<p><strong>5分勉強するごとに休憩1分</strong>が貯まります（最大20分）。席を外すと休憩を使い、休憩中に戻れば連続勉強が続きます。休憩を使い切ると、最後に検知された時刻で勉強が終わったものとして記録されます。</p>",
+        "faq4Q": "ECOとLIVEの違いは？",
+        "faq4A": "<p><strong>ECO</strong>はカメラのプレビューなしで検知間隔を広げ、バッテリーを節約します。<strong>LIVE</strong>はカメラ映像を見ながら計測します。切り替えても計測は続きます。</p>",
+        "faq5Q": "勉強時間が記録されませんでした。",
+        "faq5A": "<p><strong>1分未満</strong>の計測は記録されません。計測中にアプリを離れている間は席を外したものとみなし、休憩を使います。</p>",
+        "faq6Q": "ブリーフィングのまとめが終わりません。",
+        "faq6A": "<p>AIのまとめと音声の作成には<strong>インターネット接続</strong>が必要です。ページ数によって数分かかることがあり、アプリを閉じて開き直しても進捗を確認できます。</p>",
+        "faq7Q": "インターネットなしでも使えますか？",
+        "faq7A": "<p>勉強の計測・記録・試験タイマーはオフラインでも使えます。新しいまとめと音声にはインターネットが必要で、一度ダウンロードした音声は聞き直せます。</p>",
+        "faq8Q": "プリントを削除するとどうなりますか？",
+        "faq8A": "<p>端末の写真・まとめ・音声とともに、<strong>サーバーに保存された写真とまとめも削除されます</strong>。オフラインで削除した場合は、次に接続したときにサーバーから削除します。</p>",
+        "faq9Q": "勉強記録はバックアップされますか？",
+        "faq9A": "<p>iPhoneの<strong>iCloud</strong>に自動でバックアップされ、再インストールしても勉強記録と試験を復元できます。プリントの写真はiCloudにバックアップされません。</p>",
+        "faq10Q": "他の人がカメラに映るとどうなりますか？",
+        "faq10A": "<p>クラークは特定の人物を識別せず、人（Person）の形だけを検知します。ご自身だけが映る環境が最も正確です。</p>",
+        "trouble1": "<strong>勉強中なのに計測が途切れる:</strong> 上半身が画面に十分大きく映るようにスマホの位置を調整してください。遠すぎると体が小さく映り、見失うことがあります。",
+        "trouble2": "<strong>認識しにくい:</strong> 暗すぎないか、レンズが汚れていないか確認してください。",
+        "trouble3": "<strong>スマホが熱くなる:</strong> ECOモードでは検知間隔を広げ、発熱とバッテリー消費を抑えます。",
+        "privacyH1": "1. 処理する情報",
+        "privacyH1L1": "<strong>計測用カメラ映像:</strong> 端末内のAIが人の有無だけを検知します（顔の識別・生体情報の収集なし）。<strong>映像はサーバーに送信されません。</strong>タイムラプス用の写真は端末にのみ保存されます。",
+        "privacyH1L2": "<strong>勉強記録・試験設定:</strong> 勉強時間、休憩、試験日程など。端末に保存され、利用者ご自身のiCloudにバックアップされます。",
+        "privacyH1L3": "<strong>ブリーフィングのデータ:</strong> ご自身で追加したプリントの写真、AIが作成したまとめ・問題、学習の進捗。",
+        "privacyH1L4": "<strong>匿名識別子:</strong> ブリーフィング利用時に自動で作られる匿名アカウントID。利用者を直接特定できる情報は含みません。",
+        "privacyH1L5": "<strong>利用統計・エラー情報:</strong> アプリの利用統計、エラー記録、端末モデル・OSバージョンなど。",
+        "privacyH2": "2. 利用目的",
+        "privacyH2L1": "勉強時間の自動計測、記録・統計・タイムラプスの提供",
+        "privacyH2L2": "ブリーフィング：プリントの整理、概念の読み上げ、確認問題の作成",
+        "privacyH2L3": "アプリの品質改善とエラーの解決",
+        "privacyH3": "3. 保管と削除",
+        "privacyH3L1": "<strong>端末の情報:</strong> 利用者が削除するかアプリを削除するまで端末に保管されます。設定の初期化で削除できます。",
+        "privacyH3L2": "<strong>サーバーのブリーフィングデータ:</strong> プリントを削除すると、サーバーの写真とまとめも削除します。アプリだけを削除するとサーバーにデータが残る場合があるため、削除をご希望の場合は下記メールまでご依頼ください。",
+        "privacyH3L3": "<strong>利用統計・エラー情報:</strong> 各サービスの保管期間に従って自動で削除されます。",
+        "privacyH4": "4. 委託と国外移転",
+        "privacyH4L1": "<strong>Supabase Inc.（米国）</strong> — ブリーフィングデータの保管と匿名認証。サーバー所在地：大韓民国ソウル（AWS ap-northeast-2）。",
+        "privacyH4L2": "<strong>OpenAI, L.L.C.（米国）</strong> — プリントの写真・文章を分析し、まとめと確認問題を作成します。APIで送信したデータは、OpenAIのポリシーによりモデルの学習に使われません。",
+        "privacyH4L3": "<strong>Google LLC（米国）</strong> — まとめた概念を音声にするGoogle Cloud Text-to-Speech、利用統計（Firebase Analytics）とエラー記録（Firebase Crashlytics）。",
+        "privacyH4L4": "<strong>Apple Inc.（米国）</strong> — 利用者ご自身のiCloudアカウントへの勉強記録のバックアップ。",
+        "privacyH4L5": "国外移転は関連機能を使うときにインターネットで送信される形で行われ、ブリーフィングを使わなければプリントに関する情報は送信されません。",
+        "privacyH5": "5. 利用者の権利",
+        "privacyH5L1": "カメラ・写真の権限は、iPhoneの設定からいつでも撤回できます。",
+        "privacyH5L2": "勉強記録はアプリの設定 → 初期化で、プリントはブリーフィングの削除で消去できます。",
+        "privacyH5L3": "サーバーに残るデータの閲覧・削除をご希望の場合は、下記メールまでご依頼ください。",
+        "privacyH6": "6. お問い合わせ",
+        "privacyH6L1": "個人情報に関するお問い合わせ: <a href=\"mailto:fastchanoo@gmail.com\">fastchanoo@gmail.com</a>"
+    }
+};
 
         function setLanguage(lang) {
             localStorage.setItem('klock_lang', lang);
